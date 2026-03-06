@@ -1,0 +1,288 @@
+.font {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.SignContainer {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.left {
+  flex: 1.4;
+  display: flex;
+  /* justify-content: center;
+      align-items: center; */
+}
+.left img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.right {
+  flex: 1;
+  display: flex;
+  padding: 0 10%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input1 {
+  margin-bottom: 25px;
+  border-bottom: 1px solid #ccc;
+}
+.input1 input {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.buttoncreate {
+  border: none;
+  background-color: red;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+}
+/* 1. สร้างการวนลูปให้ครบ 7 สี (ม่วง คราม น้ำเงิน เขียว เหลือง แสด แดง) */
+@keyframes rainbow-7-colors {
+  0% {
+    background-color: #ff0000;
+  } /* แดง */
+  14% {
+    background-color: #ff7f00;
+  } /* แสด (ส้ม) */
+  28% {
+    background-color: #ffff00;
+  } /* เหลือง */
+  42% {
+    background-color: #00ff00;
+  } /* เขียว */
+  56% {
+    background-color: #0000ff;
+  } /* น้ำเงิน */
+  70% {
+    background-color: #4b0082;
+  } /* คราม (Indigo) */
+  84% {
+    background-color: #9400d3;
+  } /* ม่วง (Violet) */
+  100% {
+    background-color: #ff0000;
+  } /* กลับมาแดงเพื่อให้ลูปเนียน */
+}
+
+/* 2. ตั้งค่าตอนที่ถูกกด (Active) */
+.buttoncreate:active {
+  /* ปรับความเร็วเป็น 0.7s เพื่อให้เห็นครบทุกสีแบบไม่เร็วเกินไป */
+  animation: rainbow-7-colors 0.7s infinite linear;
+
+  transform: scale(0.92); /* ยุบตัวลงอีกนิดให้รู้สึกถึงแรงกด */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+.buttongoogle {
+  background-color: white;
+  color: black;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+}
+.buttonlogin {
+  width: 10%;
+  padding: 10px 0;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: black;
+  background-color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.password-field {
+  position: relative; /* เพื่อให้ไอคอนอ้างอิงตำแหน่งกับกล่องนี้ */
+  display: flex;
+  align-items: center;
+}
+
+.password-field i {
+  position: absolute;
+  right: 10px; /* ห่างจากขอบขวา */
+  cursor: pointer;
+  color: #777;
+  padding: 5px;
+}
+
+.password-field i:hover {
+  color: #000;
+}
+
+body,
+html {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  /* padding: 0; */
+}
+
+.Top-menu {
+  height: 60px;
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-right: 30px;
+  padding-left: 10px;
+  /* position: sticky; */
+  width: 100vw;
+  top: 40px;
+  box-sizing: border-box;
+  border: 1px solid #a2a2a2;
+}
+
+.Top-menu ul {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  list-style-type: none;
+}
+.Top-menu ul li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.left-menu {
+  /* background-color: rgb(255, 255, 255); */
+  background-color: rgb(245, 41, 41);
+  width: 230px;
+  padding: 30px;
+  /* height: calc(100vh - 60px); */
+  /* height: 100vh; */
+  /* position: fixed; */
+  /* bottom: 0; */
+  /* left: 0; */
+}
+.list-menu {
+  margin-top: 0%;
+  margin-bottom: 0%;
+  gap: 40px;
+  /* padding: 10px; */
+}
+
+.bottom-menu {
+  background-color: #000000;
+  color: #ffffff;
+  height: 440px;
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.bottom-menu .footer-container {
+  display: flex;
+  gap: 10px;
+  /* align-items: center; */
+  justify-content: center;
+  padding-left: 100px;
+  padding-right: 100px;
+  box-sizing: border-box;
+}
+.bottom-menu .box {
+  width: 217px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.announcement {
+  background-color: #000000;
+  color: #ffffff;
+  height: 48px;
+  /* padding: 10px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
+}
+
+.announcement a {
+  color: #ffffff;
+  text-decoration: underline;
+  /* font-weight: bold; */
+  margin-left: 10px;
+}
+
+.announcement button {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  padding-left: 80px;
+  /* margin-left: 20px; */
+  cursor: pointer;
+}
+
+input[type="search"] {
+  width: 200px;
+  height: 30px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url("../Asset/search.svg");
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 12px;
+}
+/* input[type=text] {
+  width: 200px;
+  height: 48px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: white;
+  background-color: #000000;
+  background-image: url('../Asset/send.svg');
+  background-size: 16px;
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 12px;
+} */
+
+.img-app {
+  display: flex;
+  gap: 10px;
+}
+.img-app .img-storeapp {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+}
+.img-social {
+  display: flex;
+  /* justify-content: space-around; */
+  gap: 30px;
+  /* justify-items: start; */
+}
+
+.copyright {
+  display: flex;
+  gap: 10px;
+  color: rgba(254, 254, 254, 0.304);
+}
