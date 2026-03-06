@@ -1,0 +1,130 @@
+body, html {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box !important;
+    width: 100%;
+}
+
+.Top-menu {
+    height: 60px;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #a2a2a2;
+    padding-left: 100px;
+    padding-right: 100px;
+    box-sizing: border-box;
+}
+
+.Top-menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    gap: 40px;
+    width: 400px;
+    list-style-type: none;
+    color:#000000 
+}
+
+
+.Top-menu ul li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.announcement {
+    background-color: #000000;
+    color: #ffffff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+.announcement a {
+    color: #ffffff;
+    text-decoration: underline;
+    margin-left: 10px;
+}
+
+.announcement button {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    padding-left: 80px;
+    cursor: pointer;
+}
+
+.search-input {
+    background-color: #F5F5F5;
+    padding: 2px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.search-input input[type=search] {
+    width: 200px;
+    font-size: 14px;
+    background-color: transparent;
+    padding: 6px 0px 6px 6px;
+    outline: none;
+    border: none;
+}
+
+.search-input img {
+    padding-left: 4px;
+}
+
+.body-container {
+    display: flex;
+    align-items: center;
+    padding: 50px 100px 50px 0px
+}
+
+.body-container img {
+    width: 60%;
+    object-fit: cover;
+    height: 600px;
+}
+
+.body-container form {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 0px 0px 0px 100px;
+    flex-direction: column;
+    width: 100%;
+}
+
+.body-container form input{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    padding: 0px 0px 6px 6px;
+    margin-top: 40px;
+    font-size: 14px;
+    border-bottom: solid black 1px;
+    width: 100%;
+}
+
+.body-container button {
+    background-color: red;
+    padding: 14px 32px 14px 32px;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
