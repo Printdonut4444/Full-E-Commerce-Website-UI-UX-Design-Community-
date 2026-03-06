@@ -1,6 +1,8 @@
-body {
+body, html {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  /* padding: 0; */
 }
 
 .Top-menu {
@@ -12,7 +14,7 @@ body {
   align-items: center;
   padding-right: 30px;
   padding-left: 10px;
-  position: sticky;
+  /* position: sticky; */
   width: 100vw;
   top: 40px;
   box-sizing: border-box;
@@ -25,13 +27,63 @@ body {
   width: 400px;
   list-style-type: none;
 }
+.Top-menu ul li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.left-menu {
+    /* background-color: rgb(255, 255, 255); */
+    background-color: rgb(245, 41, 41);
+    width: 230px;
+    padding: 30px;
+    /* height: calc(100vh - 60px); */
+    /* height: 100vh; */
+    /* position: fixed; */
+    /* bottom: 0; */
+    /* left: 0; */
+}
+.list-menu{
+  margin-top: 0%;
+  margin-bottom: 0%;
+  gap: 40px;
+  /* padding: 10px; */
+}
+
+.bottom-menu{
+  background-color: #000000;
+  color: #ffffff;
+  height: 440px;
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.bottom-menu .footer-container{
+  display: flex;
+  gap: 10px;
+  /* align-items: center; */
+  justify-content: center;
+  padding-left: 100px;
+  padding-right: 100px;
+  box-sizing: border-box;
+}
+.bottom-menu .box{
+  width: 217px; 
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
 
 .announcement {
   background-color: #000000;
   color: #ffffff;
-  padding: 10px;
-  /* display: flex; */
-  /* justify-content: space-evenly; */
+  height: 48px;
+  /* padding: 10px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   font-size: 16px;
 }
@@ -53,14 +105,53 @@ body {
 }
 
 input[type=search] {
-  width: 100px;
+  width: 200px;
+  height: 30px;
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
   background-color: white;
   background-image: url('../Asset/search.svg');
-  background-position: 10px 10px;
+  background-position: right 10px center;
   background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
+  padding: 12px 20px 12px 12px;
+}
+input[type=text] {
+  width: 200px;
+  height: 48px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: white;
+  background-color: #000000;
+  background-image: url('../Asset/send.svg');
+  background-size: 16px;
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 12px;
+}
+
+.img-app {
+  display: flex;
+  gap: 10px;
+}
+.img-app .img-storeapp {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+}
+.img-social {
+  display: flex;
+  /* justify-content: space-around; */
+  gap: 30px ;
+  /* justify-items: start; */
+}
+
+.copyright{
+  display: flex;
+  gap: 10px;
+  color: rgba(254, 254, 254, 0.304);
 }
