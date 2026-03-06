@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.Top-menu {
+  height: 60px;
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-right: 30px;
+  padding-left: 10px;
+  position: sticky;
+  width: 100vw;
+  top: 40px;
+  box-sizing: border-box;
+  border: 1px solid #a2a2a2;
+}
+
+.Top-menu ul {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  list-style-type: none;
+}
+
+.announcement {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px;
+  /* display: flex; */
+  /* justify-content: space-evenly; */
+  text-align: center;
+  font-size: 16px;
+}
+
+.announcement a {
+  color: #ffffff;
+  text-decoration: underline;
+  /* font-weight: bold; */
+  margin-left: 10px;
+}
+
+.announcement button {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  padding-left: 80px;
+  /* margin-left: 20px; */
+  cursor: pointer;
+}
+
+input[type=search] {
+  width: 100px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('../Asset/search.svg');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
