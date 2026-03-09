@@ -135,30 +135,33 @@ html {
     color: #ffffff;
     height: 440px;
     display: flex;
-    gap: 100px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
+    padding: 100px 0px 20px 0px;
+    box-sizing: border-box;
 }
+
 
 .bottom-menu .footer-container {
     display: flex;
     gap: 10px;
-    /* align-items: center; */
-    justify-content: center;
+    justify-content: space-between;
     padding-left: 100px;
     padding-right: 100px;
     box-sizing: border-box;
+    width: 100%;
 }
 
 .bottom-menu .box {
-    width: 217px;
+    max-width: 200px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-input[type=text] {
+.footer-container input[type=text] {
     width: 200px;
     height: 48px;
     box-sizing: border-box;
@@ -188,9 +191,7 @@ input[type=text] {
 
 .img-social {
     display: flex;
-    /* justify-content: space-around; */
     gap: 30px;
-    /* justify-items: start; */
 }
 
 .copyright {
