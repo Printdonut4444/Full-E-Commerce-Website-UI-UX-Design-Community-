@@ -283,6 +283,16 @@ input[type="search"] {
 
 .copyright {
   display: flex;
-  gap: 10px;
+  gap: 20px;
   color: rgba(254, 254, 254, 0.304);
+}
+.row {
+  display: flex;
+  align-items: center;
+}
+.box1 {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  margin-right: 5px;
 }

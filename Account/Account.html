@@ -1,20 +1,11 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign-up</title>
-    <link rel="stylesheet" href="../Sign-Up/Sign-up_Style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <title>My Account</title>
+    <link rel="stylesheet" href="../Account/Account_Style.css" />
+    <link rel="stylesheet" href="../E_Commerce_PageStyle/HomePage.css" />
   </head>
   <body>
     <nav>
@@ -34,41 +25,61 @@
       </ul>
       <input type="search" placeholder="what are you looking for?" />
     </nav>
-    <main class="SignContainer">
-      <div class="left"><img src="../Asset/Sign-up.png" alt="Sign-up" /></div>
-      <div class="right">
-        <h1 class="font">Create an account</h1>
-        <p class="font">Enter your details below</p>
+    <header>
+      <div class="headerview">
+        <div class="Navigroup">
+          <div class="clearbuttonH"><button>Home</button></div>
+          <div>/</div>
+          <div class="clearbuttonH"><button>My Account</button></div>
+        </div>
+        <div class="user-welcome">Welcome! <span>Md Rimel</span></div>
+      </div>
+    </header>
+    <main class="navimain">
+      <div class="navimanage">
+        <div class="clearbuttonH"><button>Manage My Account</button></div>
+        <div class="sub-menu">
+          <div class="clearbuttonL"><button>My Profile</button></div>
+          <div class="clearbuttonL"><button>Address Book</button></div>
+          <div class="clearbuttonL"><button>My Payment Option</button></div>
+        </div>
+        <div class="clearbuttonH"><button>My Order</button></div>
+        <div class="sub-menu">
+          <div class="clearbuttonL"><button>My Returns</button></div>
+          <div class="clearbuttonL"><button>My collections</button></div>
+        </div>
+        <div class="clearbuttonH"><button>My WishList</button></div>
+      </div>
+      <div class="partEdit">
+        <div class="headedit">Edit Your Profile</div>
+        <div class="flex2">
+          <div class="flex1">
+            <div>First Name</div>
+            <div class="input1"><input type="text" /></div>
+            <div>Email</div>
+            <div class="input1"><input type="text" /></div>
+          </div>
+          <div class="flex1">
+            <div>Last Name</div>
+            <div class="input1"><input type="text" /></div>
+            <div>Address</div>
+            <div class="input1"><input type="text" /></div>
+          </div>
+        </div>
+        <div>Password Changes</div>
         <div class="input1">
-          <input type="text" id="userName" placeholder="Name" />
+          <input type="text" placeholder="  Current Password" />
         </div>
         <div class="input1">
-          <input
-            type="text"
-            id="userEmail"
-            placeholder="Email or Phone Number"
-          />
+          <input type="text" placeholder="  New Password" />
         </div>
-        <div class="input1 password-field">
-          <input type="password" id="userPassword" placeholder="Password" />
-          <i
-            class="fa-solid fa-eye"
-            id="togglePassword"
-            onclick="togglePass()"
-          ></i>
+        <div class="input1">
+          <input type="text" placeholder="  onfirm New Password" />
         </div>
-        <button class="buttoncreate" onclick="signUp()">Create Account</button>
-        <button class="buttongoogle">
-          <i class="fa-brands fa-google"></i>
-          Sign up with Google
-        </button>
-        <div class="bottom">
-          Already have account? <button class="buttonlogin">Log in</button>
+        <div class="button-bottom">
+          <div class="buttom-Cancle"><button>Cancle</button></div>
+          <div class="buttom-Save"><button>Save Changes</button></div>
         </div>
-        <!-- <div class="row">
-          <div class="box1"></div>
-          <div>Smart</div>
-        </div> -->
       </div>
     </main>
     <footer class="bottom-menu">
@@ -77,11 +88,7 @@
           <strong style="font-size: 24px">Exclusive</strong>
           <div style="font-size: 20px">Subscribe</div>
           <div style="font-size: 16px">Get 10% off your first order</div>
-          <input
-            class="inputbottom"
-            type="text"
-            placeholder="Enter your email"
-          />
+          <input type="text" placeholder="Enter your email" />
         </div>
         <div class="box">
           <strong style="font-size: 20px">Support</strong>
@@ -138,33 +145,4 @@
       <div class="copyright">© Copyright Rimel 2022. All right reserved</div>
     </footer>
   </body>
-  <style></style>
-  <script>
-    function signUp() {
-      const name = document.getElementById("userName").value;
-      const email = document.getElementById("userEmail").value;
-      const password = document.getElementById("userPassword").value;
-
-      const userData = {
-        name: name,
-        email: email,
-        password: password,
-      };
-
-      console.log(userData);
-    }
-
-    function togglePass() {
-      const passwordInput = document.getElementById("userPassword");
-      const toggleIcon = document.getElementById("togglePassword");
-
-      if (passwordInput.type === "password") {
-        passwordInput.type = "text";
-        toggleIcon.classList.replace("fa-eye", "fa-eye-slash");
-      } else {
-        passwordInput.type = "password";
-        toggleIcon.classList.replace("fa-eye-slash", "fa-eye");
-      }
-    }
-  </script>
 </html>
