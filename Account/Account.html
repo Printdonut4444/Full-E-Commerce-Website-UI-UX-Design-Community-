@@ -55,30 +55,38 @@
         <div class="flex2">
           <div class="flex1">
             <div>First Name</div>
-            <div class="input1"><input type="text" /></div>
+            <div class="input1"><input type="text" id="FirstName" /></div>
             <div>Email</div>
-            <div class="input1"><input type="text" /></div>
+            <div class="input1"><input type="text" id="Email" /></div>
           </div>
           <div class="flex1">
             <div>Last Name</div>
-            <div class="input1"><input type="text" /></div>
+            <div class="input1"><input type="text" id="LastName" /></div>
             <div>Address</div>
-            <div class="input1"><input type="text" /></div>
+            <div class="input1"><input type="text" id="Address" /></div>
           </div>
         </div>
         <div>Password Changes</div>
         <div class="input1">
-          <input type="text" placeholder="  Current Password" />
+          <input type="text" placeholder="  Current Password" id="CurrPass" />
         </div>
         <div class="input1">
-          <input type="text" placeholder="  New Password" />
+          <input type="password" placeholder="  New Password" id="NewPass" />
         </div>
         <div class="input1">
-          <input type="text" placeholder="  onfirm New Password" />
+          <input
+            type="password"
+            placeholder="  Confirm New Password"
+            id="ConfirmNPass"
+          />
         </div>
         <div class="button-bottom">
-          <div class="buttom-Cancle"><button>Cancle</button></div>
-          <div class="buttom-Save"><button>Save Changes</button></div>
+          <div class="buttom-Cancle">
+            <button>Cancle</button>
+          </div>
+          <div class="buttom-Save">
+            <button onclick="ChangePass()">Save Changes</button>
+          </div>
         </div>
       </div>
     </main>
@@ -145,4 +153,27 @@
       <div class="copyright">© Copyright Rimel 2022. All right reserved</div>
     </footer>
   </body>
+  <script>
+    function ChangePass() {
+      const firstname = document.getElementById("FirstName").value;
+      const lastname = document.getElementById("LastName").value;
+      const email = document.getElementById("Email").value;
+      const address = document.getElementById("Address").value;
+      const currpass = document.getElementById("CurrPass").value;
+      const newpass = document.getElementById("NewPass").value;
+      const confirmnpass = document.getElementById("ConfirmNPass").value;
+
+      const userData = {
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+        address: address,
+        currpass: currpass,
+        newpass: newpass,
+        confirmnpass: confirmnpass,
+      };
+
+      console.log(userData);
+    }
+  </script>
 </html>
