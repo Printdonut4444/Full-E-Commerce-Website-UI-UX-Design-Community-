@@ -1,0 +1,141 @@
+.headerview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-top: 30px;
+}
+
+.Navigroup {
+  display: flex;
+  align-items: center;
+  /* justify-content: left; */
+  gap: 10px;
+  padding-left: 100px;
+}
+
+.user-welcome {
+  font-size: 16px;
+  /* justify-content: right; */
+  color: #000;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-right: 100px;
+}
+
+.clearbuttonH button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  color: black;
+  padding: 5px 0;
+}
+
+.clearbuttonL button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  color: #ccc;
+  padding: 5px 0;
+}
+
+.sub-menu {
+  display: flex;
+  flex-direction: column;
+  padding-left: 25px;
+  gap: 8px;
+}
+
+.user-welcome span {
+  color: #db4444;
+  margin-left: 5px;
+}
+
+.navimain {
+  display: flex;
+  padding-top: 30px;
+  justify-content: space-between;
+  padding-right: 100px;
+  padding-bottom: 50px;
+}
+
+.navimanage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-left: 100px;
+}
+.headedit {
+  font-size: 18px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: red;
+}
+.partEdit {
+  flex: 2.5;
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+.flex1 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.flex2 {
+  display: flex;
+  gap: 30px;
+  padding-top: 5px;
+}
+
+.input1 input {
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 10px;
+  border: #f5f5f5;
+  background-color: #f5f5f5;
+  outline: none;
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.button-bottom {
+  padding-top: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: end;
+}
+
+.buttom-Cancle button {
+  border: none;
+  color: black;
+  background-color: white;
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 10px;
+  border-radius: 4px;
+}
+.buttom-Save button {
+  border: none;
+  color: white;
+  background-color: #db4444;
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 10px;
+  border-radius: 4px;
+}
