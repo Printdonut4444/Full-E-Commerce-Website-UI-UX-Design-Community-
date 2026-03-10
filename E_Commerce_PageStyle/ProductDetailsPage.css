@@ -1,0 +1,24 @@
+.body-container {
+    width: 100%;
+    padding: 50px 100px 50px 100px;
+    box-sizing: border-box;
+}
+
+.body-container .sub-link {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.4);
+    list-style-type: none;
+    display: flex;
+    padding-left: 0 !important;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 60px;
+}
+
+.body-container .content {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr;
+}
+
+
+
