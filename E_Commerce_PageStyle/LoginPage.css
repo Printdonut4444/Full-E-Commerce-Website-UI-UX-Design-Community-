@@ -1,41 +1,41 @@
 .body-container {
-    display: flex;
-    align-items: center;
-    padding: 50px 100px 50px 0px
+  display: flex;
+  align-items: center;
+  padding: 50px 100px 50px 0px;
 }
 
 .body-container img {
-    width: 60%;
-    object-fit: cover;
-    height: 600px;
+  width: 60%;
+  object-fit: cover;
+  height: 600px;
 }
 
 .body-container form {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    padding: 0px 0px 0px 100px;
-    flex-direction: column;
-    width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 0px 0px 0px 100px;
+  flex-direction: column;
+  width: 100%;
 }
 
 .body-container form input {
-    outline: none;
-    border: none;
-    background-color: transparent;
-    padding: 0px 0px 6px 6px;
-    margin-top: 40px;
-    font-size: 14px;
-    border-bottom: solid black 1px;
-    width: 100%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: 0px 0px 6px 6px;
+  margin-top: 40px;
+  font-size: 14px;
+  border-bottom: solid black 1px;
+  width: 100%;
 }
 
 .body-container button {
-    background-color: red;
-    padding: 14px 32px 14px 32px;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
+  background-color: red;
+  padding: 14px 32px 14px 32px;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
 }
