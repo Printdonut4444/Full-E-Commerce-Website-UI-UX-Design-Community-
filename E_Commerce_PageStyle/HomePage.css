@@ -20,16 +20,19 @@ html {
   box-sizing: border-box;
   border: 1px solid #a2a2a2;
 }
+
 .Top-menu ul {
   display: flex;
   justify-content: space-between;
   width: 400px;
   list-style-type: none;
 }
+
 .Top-menu ul li:hover {
   text-decoration: underline;
   cursor: pointer;
 }
+
 .Top-menu .shoppingbar {
   display: flex;
   justify-content: space-between;
@@ -37,6 +40,7 @@ html {
   align-items: center;
   /* list-style-type: none; */
 }
+
 .left-menu {
   background-color: rgb(255, 255, 255);
   /* background-color: rgb(245, 41, 41); */
@@ -48,6 +52,7 @@ html {
   box-sizing: border-box;
   border-right: 1px solid #ddd;
 }
+
 .list-menu {
   margin-top: 0%;
   margin-bottom: 0%;
@@ -57,22 +62,23 @@ html {
   gap: 16px;
   font-size: 16px;
 }
-#menu li a 
-{
-    font-style: normal;
-    font-weight: 400;                
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    align-items: start;
-    justify-content: space-between;
-    /* padding: 10px 20px; */
-    color: black;
-    white-space: nowrap;
-    z-index: 2;
-    text-decoration: none;
+
+#menu li a {
+  font-style: normal;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: start;
+  justify-content: space-between;
+  /* padding: 10px 20px; */
+  color: black;
+  white-space: nowrap;
+  z-index: 2;
+  text-decoration: none;
 }
+
 .bottom-menu {
   background-color: #000000;
   color: #ffffff;
@@ -85,16 +91,17 @@ html {
   box-sizing: border-box;
   padding: 100px 0px 20px 0px;
 }
+
 .bottom-menu .footer-container {
   display: flex;
-  gap: 80px;
-  /* align-items: center; */
-  justify-content: center;
-  padding-left: 100px;
-  padding-right: 100px;
+  gap: 10px;
+  justify-content: space-between;
+  padding-left: 120px;
+  padding-right: 150px;
   box-sizing: border-box;
   width: 100%;
 }
+
 .bottom-menu .box {
   display: flex;
   flex-direction: column;
@@ -115,12 +122,14 @@ html {
   text-align: center;
   font-size: 16px;
 }
+
 .announcement a {
   color: #ffffff;
   text-decoration: underline;
   /* font-weight: bold; */
   margin-left: 10px;
 }
+
 .announcement button {
   background-color: transparent;
   border: none;
@@ -168,18 +177,21 @@ input[type="search"] {
   display: flex;
   gap: 10px;
 }
+
 .img-app .img-storeapp {
   display: flex;
   flex-direction: column;
   gap: 5px;
   justify-content: center;
 }
+
 .img-social {
   display: flex;
   /* justify-content: space-around; */
   gap: 30px;
   /* justify-items: start; */
 }
+
 .copyright {
   display: flex;
   gap: 10px;
@@ -191,6 +203,7 @@ input[type="search"] {
 .container1 {
   display: flex;
 }
+
 .container2 {
   /* display: flex;
   flex-direction: row; */
@@ -200,6 +213,7 @@ input[type="search"] {
   background-color: rgba(255, 255, 255, 0.304);
   /* box-sizing: border-box; */
 }
+
 .container3 {
   /* display: flex; */
   padding-left: 120px;
@@ -208,6 +222,7 @@ input[type="search"] {
   background-color: rgba(255, 255, 255, 0.304);
   /* box-sizing: border-box; */
 }
+
 .container4 {
   /* display: flex; */
   padding-left: 120px;
@@ -218,6 +233,7 @@ input[type="search"] {
   margin-bottom: 100px;
   /* box-sizing: border-box; */
 }
+
 .container5 {
   /* display: flex; */
   padding-left: 120px;
@@ -253,6 +269,7 @@ input[type="search"] {
   margin-left: 120px;
   margin-bottom: 20px;
 }
+
 .buttonviwe {
   background-color: #db4444;
   color: white;
@@ -274,6 +291,7 @@ input[type="search"] {
   scrollbar-width: none;
   /* margin-left: 120px; */
 }
+
 .explore-product {
   display: flex;
   flex-direction: column;
@@ -282,6 +300,7 @@ input[type="search"] {
   align-items: center;
   margin-right: 150px;
 }
+
 .product-slider {
   display: flex;
   overflow-x: auto;
@@ -291,9 +310,11 @@ input[type="search"] {
   scrollbar-width: none;
   /* margin-left: 120px; */
 }
+
 .product-slider::-webkit-scrollbar {
   display: none;
 }
+
 .product-card {
   min-width: 220px;
   height: 240px;
@@ -304,6 +325,7 @@ input[type="search"] {
   position: relative;
   flex-shrink: 0;
 }
+
 .product-image {
   background: #f5f5f5;
   display: flex;
@@ -312,6 +334,7 @@ input[type="search"] {
   width: 100%;
   height: 50%;
 }
+
 .badge {
   position: absolute;
   top: 10px;
@@ -337,25 +360,30 @@ input[type="search"] {
   border: 1px solid #00000030;
   box-sizing: border-box;
 }
+
 .categorybox:hover {
   background-color: #db4444;
   cursor: pointer;
   color: white;
 }
+
 .categorybox:hover svg {
   fill: white;
   width: 50px;
   height: 50px;
 }
+
 .categorybox svg {
   width: 50px;
   height: 50px;
 }
+
 .categoryimg {
   width: 50px;
   height: 50px;
   /* color: black; */
 }
+
 .category {
   display: flex;
   flex-direction: row;
@@ -368,6 +396,7 @@ input[type="search"] {
   display: flex;
   flex-direction: column;
 }
+
 .basesell-button {
   display: flex;
   justify-content: space-between;
@@ -389,6 +418,7 @@ input[type="search"] {
   height: 600px;
   /* width: 100%; */
 }
+
 /* .parent div {
   min-width: 0;
   min-height: 0;
@@ -411,11 +441,12 @@ input[type="search"] {
   grid-row-gap: 20px;
 }
 
-.div2row2{
+.div2row2 {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 20px;
 }
+
 /* .div3 {
   grid-area: 3 / 3 / 4 / 4;
   background-color: lightgreen;
@@ -435,12 +466,14 @@ input[type="search"] {
   justify-content: center;
   margin-right: 150px;
 }
+
 .slogan {
   display: flex;
   flex-direction: column;
   gap: 5px;
   align-items: center;
 }
+
 .icons-slogan {
   display: flex;
   flex-direction: column;
@@ -454,6 +487,7 @@ input[type="search"] {
   border: 10px solid #cccaca;
   margin-bottom: 10px;
 }
+
 .icons-slogan svg {
   width: 30px;
   height: 30px;
