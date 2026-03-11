@@ -125,13 +125,16 @@ window.onload = () => {
         childElelment.className = `size-item`;
 
         childElelment.addEventListener("click", () => {
-            const allSize = document.getElementsByClassName("size-item");
+            const allSize = document.querySelectorAll(".size-item");
             allSize.forEach((el) => {
                 el.style.backgroundColor = "white";
+                el.style.color = "black";
+                el.style.borderColor = "black";
             })
 
             childElelment.style.backgroundColor = "#DB4444";
             childElelment.style.color = "#FFFFFF";
+            childElelment.style.borderColor = "#DB4444";
         });
         productsSizeNode.appendChild(childElelment);    
     });
