@@ -1,0 +1,133 @@
+main {
+  padding-bottom: 50px;
+}
+.headerview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-top: 30px;
+}
+
+.Navigroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 100px;
+}
+
+.clearbuttonH button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  color: black;
+  padding: 5px 0;
+}
+
+container2 {
+  display: flex;
+  gap: 10px;
+  padding-left: 100px;
+  padding-right: 100px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+leftcontact {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(132, 132, 132);
+  box-sizing: border-box;
+  padding: 20px;
+  width: 300px;
+  height: 380px;
+}
+.leftDiv div {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  padding-top: 10px;
+  font-weight: 500;
+}
+.flexCall {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.flexWrite {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.imgLeft img {
+  width: 40px;
+  height: 40px;
+}
+
+rightcontact {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(132, 132, 132);
+  box-sizing: border-box;
+  padding: 20px;
+  width: 600px;
+  height: 380px;
+}
+
+.flexcontact {
+  display: flex;
+  gap: 20px;
+}
+.InputRight {
+  flex: 1;
+}
+
+.InputRight input {
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 10px;
+  border: #f5f5f5;
+  background-color: #f5f5f5;
+  outline: none;
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.InputMessage textarea {
+  width: 100%;
+  height: 190px;
+  padding: 10px 0;
+  margin-top: 10px;
+  border: #f5f5f5;
+  background-color: #f5f5f5;
+  outline: none;
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.buttom-Save {
+  display: flex;
+  padding-top: 10px;
+  justify-content: right;
+}
+
+.buttom-Save button {
+  border: none;
+  color: white;
+  background-color: #db4444;
+  font-size: 14px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* .line {
+  box-sizing: border-box;
+  border-top: 1px 0 black;
+} */
