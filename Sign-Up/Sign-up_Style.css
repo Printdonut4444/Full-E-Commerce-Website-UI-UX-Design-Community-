@@ -75,21 +75,33 @@
   } /* กลับมาแดงเพื่อให้ลูปเนียน */
 }
 
-/* 2. ตั้งค่าตอนที่ถูกกด (Active) */
 .buttoncreate:active {
-  /* ปรับความเร็วเป็น 0.7s เพื่อให้เห็นครบทุกสีแบบไม่เร็วเกินไป */
   animation: rainbow-7-colors 0.7s infinite linear;
-
-  transform: scale(0.92); /* ยุบตัวลงอีกนิดให้รู้สึกถึงแรงกด */
+  transform: scale(0.95);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   outline: none;
 }
 .buttongoogle {
+  display: flex;
+  gap: 5px;
   background-color: white;
   color: black;
-  padding: 15px;
+  padding: 10px;
   border-radius: 5px;
   margin-bottom: 25px;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttongoogle:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.buttongoogle img {
+  width: 20px;
+  height: 20px;
 }
 .buttonlogin {
   width: 10%;
@@ -112,14 +124,14 @@
 }
 
 .password-field {
-  position: relative; /* เพื่อให้ไอคอนอ้างอิงตำแหน่งกับกล่องนี้ */
+  position: relative;
   display: flex;
   align-items: center;
 }
 
 .password-field i {
   position: absolute;
-  right: 10px; /* ห่างจากขอบขวา */
+  right: 10px;
   cursor: pointer;
   color: #777;
   padding: 5px;
