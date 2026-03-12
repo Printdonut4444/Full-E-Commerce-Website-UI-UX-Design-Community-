@@ -138,6 +138,78 @@ window.onload = () => {
         });
         productsSizeNode.appendChild(childElelment);    
     });
+
+    const productRelatedItem = [
+        {picture: "../Asset/img/ProductDetails/g92-2-500x500 1.png", name: "HAVIT HV-G92 Gamepad", originalPrice: 160, discountedRate: 0.40, discountedPrice: 120, rating: 5, totalReview: 88},
+        {picture: "../Asset/img/ProductDetails/Frame 612.png", name: "AK-900 Wired Keyboard", originalPrice: 1160, discountedRate: 0.35, discountedPrice: 960, rating: 4, totalReview: 75},
+        {picture: "../Asset/img/ProductDetails/Frame 613.png", name: "IPS LCD Gaming Monitor", originalPrice: 400, discountedRate: 0.30, discountedPrice: 370, rating: 5, totalReview: 99},
+        {picture: "../Asset/img/ProductDetails/Frame 610.png", name: "RGB liquid CPU Cooler", originalPrice: 170, discountedRate: 0.09, discountedPrice: 160, rating: 4, totalReview: 65},
+    ];
+
+    const relatedItemNode = document.getElementById("related-item");
+    productRelatedItem.forEach((item) => {
+        const rootChild = document.createElement("div");
+        rootChild.style.height = "350px";
+        rootChild.style.width = "270px";
+        rootChild.style.backgroundColor = "blue";
+
+        const child1 = document.createElement("div");
+        child1.style.position = "relative";
+        child1.style.height = "250px";
+        child1.style.width = "100%";
+        child1.style.backgroundColor = "#F5F5F5";
+        child1.style.display = "flex";
+        child1.style.justifyContent = "center";
+        child1.style.alignItems = "center";
+
+        const picture = document.createElement("img");
+        picture.src = item.picture;
+        picture.alt = item.name;
+        picture.style.objectFit = "contain";
+        picture.style.width = "150px";
+        picture.style.height = "150px";
+        child1.appendChild(picture);
+
+        const discount = document.createElement("div");
+        discount.style.width = "55px";
+        discount.style.height = "26px";
+        discount.innerText = `-${item.discountedRate * 100}%`;
+        discount.style.position = "absolute";
+        discount.style.left = "10px";
+        discount.style.top = "10px";
+        discount.style.backgroundColor = "#DB4444";
+        discount.style.color = "white";
+        discount.style.display = "flex";
+        discount.style.justifyContent = "center";
+        discount.style.alignItems = "center";
+        discount.style.borderRadius = "4px";
+        discount.style.fontSize = "12px";
+        child1.appendChild(discount);
+
+        const likeButton = document.createElement("div");
+        likeButton.style.width = "34px";
+        likeButton.style.height = "34px";
+        likeButton.style.borderRadius = "50%";
+        likeButton.style.position = "absolute";
+        likeButton.style.right = "10px"; 
+        likeButton.style.top = "10px";   
+
+        rootChild.appendChild(child1);
+
+
+        const child2 = document.createElement("div");
+        child2.style.display = "flex";
+        child2.style.flexDirection = "column";
+        child2.style.justifyContent = "end";
+        child2.style.alignItems = "start";
+        child2.style.backgroundColor = "orange";
+        child2.style.height = "100px";
+        child2.style.width = "100%";
+        rootChild.appendChild(child2);
+
+
+        relatedItemNode.appendChild(rootChild);
+    })
 };
 
 const start1 = document.getElementById("star1");
