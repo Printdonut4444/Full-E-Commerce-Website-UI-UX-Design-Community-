@@ -61,8 +61,11 @@ function onClickSignUp() {
     window.location.href = "../Sign-Up/Sign-Up.html";
 }
 function onClickAccount() {
-    window.location.href = "../Account/Account.html";
+    window.open(`../Account/Account.html`);
 }
+// function onClickAccount() {
+//     window.location.href = "../Account/Account.html";
+// }
 
 
 
