@@ -30,11 +30,14 @@ main {
 /* container3 {
   padding-left: 100px;
 } */
-
+container2 {
+  display: flex;
+  flex-direction: column;
+}
 .contain-line2 {
   display: flex;
   margin: 0 100px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 10px 0;
 }
 
@@ -42,6 +45,18 @@ main {
   display: flex;
   flex: 1;
   justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+input[type="number"] {
+  width: 70px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 16px;
+  text-align: center;
 }
 
 .contain-line3 {
@@ -49,6 +64,7 @@ main {
   justify-content: space-between;
   padding-left: 100px;
   padding-right: 100px;
+  padding-top: 20px;
 }
 
 .btn-line3 button {
@@ -127,4 +143,61 @@ main {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 10px;
   border-radius: 3px;
+}
+
+.product-item {
+  display: flex;
+  align-items: center;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.remove-btn {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+
+  background-color: #db4444;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0;
+  transition: all 0.3s ease;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8);
+}
+
+.image-wrapper:hover .remove-btn {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.remove-btn:hover {
+  background-color: #f15252;
+  transform: scale(1.1);
 }
