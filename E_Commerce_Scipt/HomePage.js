@@ -34,24 +34,33 @@ window.onload = function () {
 const profileBtn = document.getElementById("profileBtn");
 const dropdownMenu = document.getElementById("dropdownMenu");
 
+const profileBtn = document.getElementById("profileBtn");
+const dropdownMenu = document.getElementById("dropdownMenu");
 profileBtn.addEventListener("click", function (event) {
-  // สลับการเปิด/ปิดเมนู
   dropdownMenu.classList.toggle("show");
-
-  // สลับการค้างสีแดงที่ปุ่ม (Toggle คลาส active)
   profileBtn.classList.toggle("active");
 
   event.stopPropagation();
 });
 
-// เมื่อคลิกที่อื่นนอกจากเมนู ให้ปิดเมนูและเอาสีแดงออก
+const swichlanguage = document.getElementById("swichlanguage");
+const lgMenu = document.getElementById("lgMenu");
+swichlanguage.addEventListener("click", function (event) {
+  lgMenu.classList.toggle("show");
+  swichlanguage.classList.toggle("active");
+});
+
 document.addEventListener("click", function (event) {
+  if (!swichlanguage.contains(event.target) && !lgMenu.contains(event.target)) {
+    lgMenu.classList.remove("show");
+    swichlanguage.classList.remove("active");
+  }
   if (
     !profileBtn.contains(event.target) &&
     !dropdownMenu.contains(event.target)
   ) {
     dropdownMenu.classList.remove("show");
-    profileBtn.classList.remove("active"); // เอาสีแดงออกเมื่อเมนูปิด
+    profileBtn.classList.remove("active");
   }
 });
 
@@ -63,6 +72,9 @@ function onClickAbout() {
 }
 function onClickSignUp() {
   window.location.href = "../Sign-Up/Sign-Up.html";
+}
+function onClickWishlist() {
+  window.location.href = "../E_Commerce_Page/WishlistPage.html";
 }
 function onClickAccount() {
   window.location.href = "../Account/Account.html";
