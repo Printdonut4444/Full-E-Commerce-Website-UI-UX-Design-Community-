@@ -1,15 +1,3 @@
-// ฟังก์ชันเลื่อนไปทางซ้ายหรือขวา
-function slide(direction) {
-    const slider = document.querySelector('.product-slider');
-    const scrollAmount = 300; // ระยะการเลื่อนต่อการกด 1 ครั้ง
-
-    if (direction === 'left') {
-        slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    } else {
-        slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-}
-
 window.onload = function () {
     const btt = document.getElementById("backToTop");
 
@@ -51,7 +39,7 @@ document.addEventListener('click', function (event) {
         swichlanguage.classList.remove('active'); 
 
     }
-     if (!profileBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+    if (!profileBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
         dropdownMenu.classList.remove('show');
         profileBtn.classList.remove('active');
 
@@ -59,7 +47,9 @@ document.addEventListener('click', function (event) {
 });
 
 
-
+function onClickHome() {
+    window.location.href = "../E_Commerce_Page/HomePage.html"; 
+}
 function onClickContact() {
     window.location.href = "../Contact/Contact.html";
 }
@@ -68,9 +58,6 @@ function onClickAbout() {
 }
 function onClickSignUp() {
     window.location.href = "../Sign-Up/Sign-Up.html";
-}
-function onClickWishlist() {
-    window.location.href = "../E_Commerce_Page/WishlistPage.html"; 
 }
 function onClickAccount() {
     window.open(`../Account/Account.html`);
