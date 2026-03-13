@@ -118,7 +118,7 @@
   justify-content: end;
 }
 
-.buttom-Cancle button {
+.Button-Cancle button {
   border: none;
   cursor: pointer;
   color: black;
@@ -128,7 +128,7 @@
   padding: 10px;
   border-radius: 4px;
 }
-.buttom-Save button {
+.Button-Save button {
   border: none;
   cursor: pointer;
   color: white;

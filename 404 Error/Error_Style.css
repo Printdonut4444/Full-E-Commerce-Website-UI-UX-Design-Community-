@@ -50,13 +50,13 @@ main {
   color: black;
 }
 
-.buttom-back {
+.Button-back {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 50px;
 }
-.buttom-back button {
+.button-back button {
   border: none;
   cursor: pointer;
   color: white;

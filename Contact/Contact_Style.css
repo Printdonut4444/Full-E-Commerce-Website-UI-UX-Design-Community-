@@ -115,13 +115,13 @@ rightcontact {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.buttom-Save {
+.Button-Save {
   display: flex;
   padding-top: 10px;
   justify-content: right;
 }
 
-.buttom-Save button {
+.Button-Save button {
   border: none;
   cursor: pointer;
   color: white;
