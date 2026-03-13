@@ -319,9 +319,32 @@ window.onload = () => {
         child2.appendChild(priceNode);
         child2.appendChild(ratingNode);
         rootChild.appendChild(child2);
-
-
         relatedItemNode.appendChild(rootChild);
+
+        rootChild.addEventListener('mouseover', () => {
+            const addToCartNode = document.createElement("div");
+            addToCartNode.style.position = "absolute";
+            addToCartNode.style.height = "41px";
+            addToCartNode.style.backgroundColor = "black";
+            addToCartNode.style.color = "white";
+            addToCartNode.innerText = "Add To Cart";
+            addToCartNode.style.bottom = "0";
+            addToCartNode.style.left = "0";
+            addToCartNode.style.display = "flex";
+            addToCartNode.style.justifyContent = "center";
+            addToCartNode.style.alignItems = "center";
+            addToCartNode.style.width = "100%"
+            addToCartNode.id = "addToCart"
+            addToCartNode.style.fontWeight = "bold";
+            child1.appendChild(addToCartNode);
+        })
+
+        rootChild.addEventListener('mouseleave', () => {
+            const removeAddToCart = child1.querySelectorAll("#addToCart");
+            removeAddToCart.forEach((node) => {
+                node.remove();
+            });
+        });
     });
 };
 
