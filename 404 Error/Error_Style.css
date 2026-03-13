@@ -1,0 +1,68 @@
+main {
+  padding-bottom: 50px;
+}
+.headerview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-top: 30px;
+}
+
+.Navigroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 100px;
+}
+
+.clearbuttonH button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  color: black;
+  padding: 5px 0;
+}
+
+.contain2-line {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contain2-head {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 72px;
+  font-weight: 500;
+  color: black;
+}
+
+.contain2-sub {
+  padding-top: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  /* font-weight: bold; */
+  color: black;
+}
+
+.buttom-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+}
+.buttom-back button {
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: #db4444;
+  font-size: 14px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 15px 25px;
+  border-radius: 3px;
+}
