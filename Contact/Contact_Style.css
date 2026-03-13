@@ -121,6 +121,7 @@ rightcontact {
 
 .buttom-Save button {
   border: none;
+  cursor: pointer;
   color: white;
   background-color: #db4444;
   font-size: 14px;

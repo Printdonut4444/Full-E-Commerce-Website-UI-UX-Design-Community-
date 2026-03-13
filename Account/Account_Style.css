@@ -123,6 +123,7 @@
 
 .buttom-Cancle button {
   border: none;
+  cursor: pointer;
   color: black;
   background-color: white;
   font-size: 16px;
@@ -132,6 +133,7 @@
 }
 .buttom-Save button {
   border: none;
+  cursor: pointer;
   color: white;
   background-color: #db4444;
   font-size: 16px;
