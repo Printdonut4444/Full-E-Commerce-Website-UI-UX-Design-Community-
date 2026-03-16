@@ -114,9 +114,6 @@ function onClickAccount() {
 //     window.location.href = "../Account/Account.html";
 // }
 
-function onClickCart() {
-  window.location.href = "../Cart/Cart.html";
-}
 
 
 function link(link) {
