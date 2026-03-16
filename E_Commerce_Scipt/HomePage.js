@@ -59,7 +59,7 @@ profileBtn.addEventListener("click", function (event) {
   dropdownMenu.classList.toggle("show");
   profileBtn.classList.toggle("active");
 
-  event.stopPropagation();
+  // event.stopPropagation();
 });
 
 const swichlanguage = document.getElementById("swichlanguage");
@@ -67,7 +67,18 @@ const lgMenu = document.getElementById("lgMenu");
 swichlanguage.addEventListener("click", function (event) {
   lgMenu.classList.toggle("show");
   swichlanguage.classList.toggle("active");
+
+  // event.stopPropagation();
 });
+const lgThai = document.getElementById("lgThai");
+lgThai.addEventListener("click",function(){
+  swichlanguage.innerHTML = lgThai.innerHTML + ' &#9662';
+  // console.log(swichlanguage.innerText);
+})
+const lgEng = document.getElementById("lgEng");
+lgEng.addEventListener('click',function(){
+  swichlanguage.innerHTML = lgEng.innerHTML + ' &#9662';
+})
 
 document.addEventListener("click", function (event) {
   if (!swichlanguage.contains(event.target) && !lgMenu.contains(event.target)) {
@@ -75,9 +86,7 @@ document.addEventListener("click", function (event) {
     swichlanguage.classList.remove("active");
   }
   if (
-    !profileBtn.contains(event.target) &&
-    !dropdownMenu.contains(event.target)
-  ) {
+    !profileBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
     dropdownMenu.classList.remove("show");
     profileBtn.classList.remove("active");
   }
@@ -94,6 +103,9 @@ function onClickSignUp() {
 }
 function onClickWishlist() {
   window.location.href = "../E_Commerce_Page/WishlistPage.html";
+}
+function onClickCart() {
+  window.location.href = "../Cart/Cart.html";
 }
 function onClickAccount() {
   window.location.href = "../Account/Account.html";
