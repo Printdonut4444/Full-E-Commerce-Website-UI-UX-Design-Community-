@@ -104,8 +104,29 @@ contain3-right {
   margin-bottom: 15px;
 }
 
+.payment {
+  display: flex;
+  flex: 1;
+}
+
 .payment input[type="radio"] {
   color: black;
+}
+
+.payment-bank {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.bank {
+  display: flex;
+  flex: 1;
+}
+.bank img {
+  width: 90%;
+  height: 90%;
 }
 
 .contain3-coupon {

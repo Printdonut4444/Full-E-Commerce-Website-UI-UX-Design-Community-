@@ -14,3 +14,25 @@ function link(link) {
       break;
   }
 }
+
+function BillDetail() {
+  const name = document.getElementById("firstName").value;
+  const company = document.getElementById("companyName").value;
+  const address = document.getElementById("address").value;
+  const detailAddress = document.getElementById("detailAddress").value;
+  const city = document.getElementById("city").value;
+  const phone = document.getElementById("phone").value;
+  const email = document.getElementById("email").value;
+
+  const billData = {
+    name: name,
+    company: company,
+    address: address,
+    detailAddress: detailAddress,
+    city: city,
+    phone: phone,
+    email: email,
+  };
+
+  console.log(billData);
+}
