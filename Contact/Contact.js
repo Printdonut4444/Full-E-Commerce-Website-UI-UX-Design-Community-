@@ -12,6 +12,21 @@ function link(link) {
     case "Contact":
       window.location.href = "../Contact/Contact.html";
       break;
-
   }
+}
+
+function Contact() {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const message = document.getElementById("message").value;
+
+  const contact = {
+    name: name,
+    email: email,
+    phone: phone,
+    message: message,
+  };
+
+  console.log(contact);
 }
