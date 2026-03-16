@@ -171,33 +171,6 @@ html {
   width: 100%;
 }
 
-.Top-menu {
-  height: 60px;
-  background-color: white;
-  color: black;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding-right: 30px;
-  padding-left: 10px;
-  /* position: sticky; */
-  width: 100%;
-  top: 40px;
-  box-sizing: border-box;
-  border: 1px solid #a2a2a2;
-}
-
-.Top-menu ul {
-  display: flex;
-  justify-content: space-between;
-  width: 400px;
-  list-style-type: none;
-}
-
-.Top-menu ul li:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
 
 .left-menu {
   background-color: rgb(255, 255, 255);
@@ -249,48 +222,6 @@ html {
   flex-direction: column;
   gap: 15px;
   max-width: 200px;
-}
-
-.announcement {
-  background-color: #000000;
-  color: #ffffff;
-  height: 48px;
-  /* padding: 10px; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 16px;
-}
-
-.announcement a {
-  color: #ffffff;
-  text-decoration: underline;
-  /* font-weight: bold; */
-  margin-left: 10px;
-}
-
-.announcement button {
-  background-color: transparent;
-  border: none;
-  color: #ffffff;
-  padding-left: 80px;
-  /* margin-left: 20px; */
-  cursor: pointer;
-}
-
-input[type="search"] {
-  width: 200px;
-  height: 30px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: white;
-  background-image: url("../Asset/search.svg");
-  background-position: right 10px center;
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 12px;
 }
 
 .box input[type="text"] {
