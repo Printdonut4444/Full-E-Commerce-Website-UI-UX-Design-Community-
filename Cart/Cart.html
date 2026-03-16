@@ -19,34 +19,10 @@
       <nav class="Top-menu">
         <div><strong>Exclusive</strong></div>
         <ul>
-          <li>
-            <a
-              href="../E_Commerce_Page/HomePage.html"
-              style="text-decoration: none; color: inherit"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a
-              href="../Contact/Contact.html"
-              style="text-decoration: none; color: inherit"
-              >Contact</a
-            >
-          </li>
-          <li>
-            <a
-              href="../About/About.html"
-              style="text-decoration: none; color: inherit"
-              >About</a
-            >
-          </li>
-          <li>
-            <a
-              href="../Sign-Up/Sign-Up.html"
-              style="text-decoration: none; color: inherit"
-              >Sign Up</a
-            >
-          </li>
+          <li onclick="link('Home')">Home</li>
+          <li onclick="link('Contact')">Contact</li>
+          <li onclick="link('About')">About</li>
+          <li onclick="link('SignUp')">Sign up</li>
         </ul>
         <input type="search" placeholder="what are you looking for?" />
       </nav>
@@ -97,7 +73,7 @@
       <container3>
         <div class="contain-line3">
           <div class="btn-line3">
-            <button onclick="onClickShop()">Return To Shop</button>
+            <button onclick="link('Home')">Return To Shop</button>
           </div>
           <div class="btn-line3"><button>Update Cart</button></div>
         </div>
