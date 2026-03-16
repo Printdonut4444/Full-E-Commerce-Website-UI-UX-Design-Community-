@@ -31,8 +31,8 @@ window.onload = function () {
   };
 };
 
-const profileBtn = document.getElementById("profileBtn");
-const dropdownMenu = document.getElementById("dropdownMenu");
+// const profileBtn = document.getElementById("profileBtn");
+// const dropdownMenu = document.getElementById("dropdownMenu");
 
 const profileBtn = document.getElementById("profileBtn");
 const dropdownMenu = document.getElementById("dropdownMenu");

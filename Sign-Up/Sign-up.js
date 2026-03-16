@@ -16,6 +16,9 @@ function link(link) {
     case "Contact":
       window.location.href = "../Contact/Contact.html";
       break;
+    case "LogIn":
+      window.location.href = "../E_Commerce_Page/LoginPage.html";
+      break;
   }
 }
 
