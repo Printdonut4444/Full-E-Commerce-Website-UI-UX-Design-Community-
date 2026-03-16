@@ -41,7 +41,8 @@ leftcontact {
   flex: 1;
   display: flex;
   flex-direction: column;
-  border: 1px solid rgb(132, 132, 132);
+  /* border: 1px solid rgb(132, 132, 132); */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   padding: 20px;
   width: 300px;
@@ -73,7 +74,8 @@ rightcontact {
   flex: 2;
   display: flex;
   flex-direction: column;
-  border: 1px solid rgb(132, 132, 132);
+  /* border: 1px solid rgb(132, 132, 132); */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   padding: 20px;
   width: 600px;
@@ -113,14 +115,15 @@ rightcontact {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.buttom-Save {
+.Button-Save {
   display: flex;
   padding-top: 10px;
   justify-content: right;
 }
 
-.buttom-Save button {
+.Button-Save button {
   border: none;
+  cursor: pointer;
   color: white;
   background-color: #db4444;
   font-size: 14px;

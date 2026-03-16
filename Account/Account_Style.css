@@ -86,10 +86,7 @@
   justify-content: center;
   padding: 40px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  border-bottom: 1px solid #ccc;
-  border-top: 1px solid #ccc;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .flex1 {
@@ -121,8 +118,9 @@
   justify-content: end;
 }
 
-.buttom-Cancle button {
+.Button-Cancle button {
   border: none;
+  cursor: pointer;
   color: black;
   background-color: white;
   font-size: 16px;
@@ -130,8 +128,9 @@
   padding: 10px;
   border-radius: 4px;
 }
-.buttom-Save button {
+.Button-Save button {
   border: none;
+  cursor: pointer;
   color: white;
   background-color: #db4444;
   font-size: 16px;

@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact</title>
-    <link rel="stylesheet" href="../Contact/Contact_Style.css" />
+    <title>Check Out</title>
+    <link rel="stylesheet" href="../Checkout/Checkout_Style.css" />
     <link rel="stylesheet" href="../E_Commerce_PageStyle/HomePage.css" />
   </head>
   <body>
@@ -55,63 +55,95 @@
       <container1>
         <div class="headerview">
           <div class="Navigroup">
-            <div class="clearbuttonH"><button>Home</button></div>
+            <div class="clearbuttonH"><button>Accout</button></div>
             <div>/</div>
-            <div class="clearbuttonH"><button>Contact</button></div>
+            <div class="clearbuttonH"><button>My Accout</button></div>
+            <div>/</div>
+            <div class="clearbuttonH"><button>Product</button></div>
+            <div>/</div>
+            <div class="clearbuttonH"><button>View Cart</button></div>
+            <div>/</div>
+            <div class="clearbuttonH"><button>Check Out</button></div>
           </div>
         </div>
       </container1>
+      <div></div>
       <container2>
-        <leftcontact>
-          <div>
-            <div class="leftDiv">
-              <div class="flexCall">
-                <div class="imgLeft">
-                  <img src="../Asset/RedPhone.png" alt="RPhone" />
-                </div>
-                <div>Call to Us</div>
-              </div>
-              <div>We are available 24/7, 7 days a week.</div>
-              <div>Phone: +8801611112222</div>
-            </div>
-            <hr />
-            <div class="leftDiv">
-              <div class="flexWrite">
-                <div class="imgLeft">
-                  <img src="../Asset/RedEmail.png" alt="REmail" />
-                </div>
-                <div>Write to Us</div>
-              </div>
-              <div>
-                Fill out our form and we will contact you within 24 hours.
-              </div>
-              <div>Emails: customer@exclusive.com</div>
-              <div>Emails: support@exclusive.com</div>
-            </div>
+        <div class="contain2-line">Billing Details</div>
+      </container2>
+      <container3>
+        <contain3-left>
+          <div>First Name*</div>
+          <div class="contain3-left-input"><input type="text" /></div>
+          <hr />
+          <div>Company Name</div>
+          <div class="contain3-left-input"><input type="text" /></div>
+          <hr />
+          <div>Street Address*</div>
+          <div class="contain3-left-input"><input type="text" /></div>
+          <hr />
+          <div>Apartment, floor, etc. (optional)</div>
+          <div class="contain3-left-input"><input type="text" /></div>
+          <hr />
+          <div>Town/City*</div>
+          <div class="contain3-left-input"><input type="text" /></div>
+          <hr />
+          <div>Phone Number*</div>
+          <div class="contain3-left-input"><input type="text" /></div>
+          <hr />
+          <div>Email Address*</div>
+          <div class="contain3-left-input"><input type="text" /></div>
+          <hr />
+          <div class="check">
+            <input type="checkbox" id="agree" />
+            <label for="agree"
+              >Save this information for faster check-out next time</label
+            >
           </div>
-        </leftcontact>
-        <rightcontact>
-          <div class="flexcontact">
-            <div class="InputRight">
-              <input type="text" placeholder="Your Name *" />
+        </contain3-left>
+        <contain3-right>
+          <div class="contain3-right-item-line">
+            <div class="contain3-right-item">
+              <div class="contain3-img">
+                <img
+                  src="../Asset/Sell.png"
+                  alt="LCD Monitor"
+                  class="product-img"
+                />
+              </div>
+              <div>LCD Monitor</div>
             </div>
-            <div class="InputRight">
-              <input type="text" placeholder="Your Email *" />
+            <div>$650</div>
+          </div>
+          <div class="contain3-right-item-line">
+            <div class="contain3-right-item">
+              <div class="contain3-img">
+                <img
+                  src="../Asset/Sell.png"
+                  alt="LCD Monitor"
+                  class="product-img"
+                />
+              </div>
+              <div>LCD Monitor</div>
             </div>
-            <div class="InputRight">
-              <input type="text" placeholder="Your Phone *" />
-            </div>
+            <div>$650</div>
+          </div>
+          <div class="contain3-right-item-line">
+            <div class="contain3-right-item">Subtotal:</div>
+            <div>$1750</div>
           </div>
           <hr />
-          <div class="InputMessage">
-            <!-- <input type="textarea" placeholder="  Your Message" /> -->
-            <textarea placeholder="Your Message"></textarea>
+          <div class="contain3-right-item-line">
+            <div class="contain3-right-item">Shiping:</div>
+            <div>Free</div>
           </div>
-          <div class="Button-Save">
-            <button>Send Message</button>
+          <hr />
+          <div class="contain3-right-item-line">
+            <div class="contain3-right-item">Total:</div>
+            <div>$1750</div>
           </div>
-        </rightcontact>
-      </container2>
+        </contain3-right>
+      </container3>
     </main>
     <footer class="bottom-menu">
       <div class="footer-container">
@@ -176,4 +208,5 @@
       <div class="copyright">© Copyright Rimel 2022. All right reserved</div>
     </footer>
   </body>
+  <script src="../Cart/Cart.js"></script>
 </html>
