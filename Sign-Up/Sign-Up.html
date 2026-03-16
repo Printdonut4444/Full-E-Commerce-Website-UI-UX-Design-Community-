@@ -1,201 +1,131 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign-up</title>
-    <link rel="stylesheet" href="../Sign-Up/Sign-up_Style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <nav>
-      <div class="announcement">
-        Summer sale for All Swim suits And Free Express Delivery - OFF 50%
-        <a rel="ShopNow" href="HomePage.html">Shop Now</a>
-        <button>English</button>
-      </div>
-    </nav>
-    <nav class="Top-menu">
-      <div><strong>Exclusive</strong></div>
-      <ul>
-        <li>
-          <a
-            href="../E_Commerce_Page/HomePage.html"
-            style="text-decoration: none; color: inherit"
-            >Home</a
-          >
-        </li>
-        <li>
-          <a
-            href="../Contact/Contact.html"
-            style="text-decoration: none; color: inherit"
-            >Contact</a
-          >
-        </li>
-        <li>
-          <a
-            href="../About/About.html"
-            style="text-decoration: none; color: inherit"
-            >About</a
-          >
-        </li>
-        <li>
-          <a
-            href="../Sign-Up/Sign-Up.html"
-            style="text-decoration: none; color: inherit"
-            >Sign Up</a
-          >
-        </li>
-      </ul>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign-up</title>
+  <link rel="stylesheet" href="../Sign-Up/Sign-up_Style.css" />
+  <link rel="stylesheet" href="../E_Commerce_PageStyle/LayoutStyle.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <nav>
+    <div class="announcement">
+      <span style="visibility: hidden;">English</span>
+      <span>Summer sale for All Swim suits And Free Express Delivery - OFF 50%
+        <a rel="ShopNow" href="HomePage.html">Shop Now</a></span>
+      <button class="switch-lang">English</button>
+    </div>
+  </nav>
+  <nav class="Top-menu">
+    <div><strong style="font-size: 20px">Exclusive</strong></div>
+    <ul>
+      <li onclick="link('Home')">Home</li>
+      <li onclick="link('Contact')">Contact</li>
+      <li onclick="link('About')">About</li>
+      <li onclick="link('SignUp')">Sign up</li>
+    </ul>
+    <div class="search-input">
       <input type="search" placeholder="what are you looking for?" />
-    </nav>
-    <main class="SignContainer">
-      <div class="left"><img src="../Asset/Sign-up.png" alt="Sign-up" /></div>
-      <div class="right">
-        <h1 class="font">Create an account</h1>
-        <p class="font">Enter your details below</p>
-        <div class="input1">
-          <input type="text" id="userName" placeholder="Name" />
-        </div>
-        <div class="input1">
-          <input
-            type="text"
-            id="userEmail"
-            placeholder="Email or Phone Number"
-          />
-        </div>
-        <div class="input1 password-field">
-          <input type="password" id="userPassword" placeholder="Password" />
-          <i
-            class="fa-solid fa-eye"
-            id="togglePassword"
-            onclick="togglePass()"
-          ></i>
-        </div>
-        <button class="buttoncreate" onclick="signUp()">Create Account</button>
-        <button class="buttongoogle">
-          <img src="../Asset/Google-Icon.png" alt="Icon Google" />
-          Sign up with Google
-        </button>
-        <div class="bottom">
-          Already have account?
-          <button class="buttonlogin">
-            <a
-              href="../E_Commerce_Page/LoginPage.html"
-              style="text-decoration: none; color: inherit"
-              >Log in</a
-            >
-          </button>
-        </div>
-        <!-- <div class="row">
+      <img src="../Asset//search.svg" alt="search-icon" style="cursor: pointer;">
+    </div>
+  </nav>
+  <main class="SignContainer">
+    <div class="left"><img src="../Asset/Sign-up.png" alt="Sign-up" /></div>
+    <div class="right">
+      <h1 class="font">Create an account</h1>
+      <p class="font">Enter your details below</p>
+      <div class="input1">
+        <input type="text" id="userName" placeholder="Name" />
+      </div>
+      <div class="input1">
+        <input type="text" id="userEmail" placeholder="Email or Phone Number" />
+      </div>
+      <div class="input1 password-field">
+        <input type="password" id="userPassword" placeholder="Password" />
+        <i class="fa-solid fa-eye" id="togglePassword" onclick="togglePass()"></i>
+      </div>
+      <button class="buttoncreate" onclick="signUp()">Create Account</button>
+      <button class="buttongoogle">
+        <img src="../Asset/Google-Icon.png" alt="Icon Google" />
+        Sign up with Google
+      </button>
+      <div class="bottom">
+        Already have account?
+        <button class="buttonlogin" onclick="link('LogIn')">Log in</button>
+      </div>
+      <!-- <div class="row">
           <div class="box1"></div>
           <div>Smart</div>
         </div> -->
+    </div>
+  </main>
+  <footer class="bottom-menu">
+    <div class="footer-container">
+      <div class="box">
+        <strong style="font-size: 24px">Exclusive</strong>
+        <div style="font-size: 20px">Subscribe</div>
+        <div style="font-size: 16px">Get 10% off your first order</div>
+        <input class="inputbottom" type="text" placeholder="Enter your email" />
       </div>
-    </main>
-    <footer class="bottom-menu">
-      <div class="footer-container">
-        <div class="box">
-          <strong style="font-size: 24px">Exclusive</strong>
-          <div style="font-size: 20px">Subscribe</div>
-          <div style="font-size: 16px">Get 10% off your first order</div>
-          <input
-            class="inputbottom"
-            type="text"
-            placeholder="Enter your email"
-          />
+      <div class="box">
+        <strong style="font-size: 20px">Support</strong>
+        <div style="font-size: 16px">
+          111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.
         </div>
-        <div class="box">
-          <strong style="font-size: 20px">Support</strong>
-          <div style="font-size: 16px">
-            111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.
-          </div>
-          <div style="font-size: 16px">exclusive@gmail.com</div>
-          <div style="font-size: 16px">+88015-88888-9999</div>
+        <div style="font-size: 16px">exclusive@gmail.com</div>
+        <div style="font-size: 16px">+88015-88888-9999</div>
+      </div>
+      <div class="box">
+        <strong style="font-size: 20px">Account</strong>
+        <div style="font-size: 16px">My Account</div>
+        <div style="font-size: 16px">Login / Register</div>
+        <div style="font-size: 16px">Cart</div>
+        <div style="font-size: 16px">Wishlist</div>
+        <div style="font-size: 16px">Shop</div>
+      </div>
+      <div class="box">
+        <strong style="font-size: 20px">Quick link</strong>
+        <div style="font-size: 16px">Privacy Policy</div>
+        <div style="font-size: 16px">Terms Of Use</div>
+        <div style="font-size: 16px">FAQ</div>
+        <div style="font-size: 16px">Contact</div>
+      </div>
+      <div class="box">
+        <strong style="font-size: 20px">Download App</strong>
+        <div style="font-size: 12px; color: lightgray">
+          Save $3 with App New User Only
         </div>
-        <div class="box">
-          <strong style="font-size: 20px">Account</strong>
-          <div style="font-size: 16px">My Account</div>
-          <div style="font-size: 16px">Login / Register</div>
-          <div style="font-size: 16px">Cart</div>
-          <div style="font-size: 16px">Wishlist</div>
-          <div style="font-size: 16px">Shop</div>
-        </div>
-        <div class="box">
-          <strong style="font-size: 20px">Quick link</strong>
-          <div style="font-size: 16px">Privacy Policy</div>
-          <div style="font-size: 16px">Terms Of Use</div>
-          <div style="font-size: 16px">FAQ</div>
-          <div style="font-size: 16px">Contact</div>
-        </div>
-        <div class="box">
-          <strong style="font-size: 20px">Download App</strong>
-          <div style="font-size: 12px; color: lightgray">
-            Save $3 with App New User Only
-          </div>
-          <div>
-            <div class="img-app">
+        <div>
+          <div class="img-app">
+            <img src="../Asset/Qr Code.png" alt="Download App" style="width: 80px; height: 80px" />
+            <div class="img-storeapp">
               <img
-                src="../Asset/Qr Code.png"
-                alt="Download App"
-                style="width: 80px; height: 80px"
-              />
-              <div class="img-storeapp">
-                <img
-                  src="../Asset/png-transparent-google-play-store-logo-google-play-app-store-android-wallets-text-label-logo.png"
-                  alt="Google Play Store"
-                />
-                <img src="../Asset/download-appstore.png" alt="App Store" />
-              </div>
+                src="../Asset/png-transparent-google-play-store-logo-google-play-app-store-android-wallets-text-label-logo.png"
+                alt="Google Play Store" />
+              <img src="../Asset/download-appstore.png" alt="App Store" />
             </div>
           </div>
-          <div class="img-social">
-            <img src="../Asset/Icon-Facebook.png" alt="Facebook" />
-            <img src="../Asset/Icon-Twitter.png" alt="Twitter" />
-            <img src="../Asset/icon-instagram.png" alt="Instagram" />
-            <img src="../Asset/Icon-Linkedin.png" alt="LinkedIn" />
-          </div>
+        </div>
+        <div class="img-social">
+          <img src="../Asset/Icon-Facebook.png" alt="Facebook" />
+          <img src="../Asset/Icon-Twitter.png" alt="Twitter" />
+          <img src="../Asset/icon-instagram.png" alt="Instagram" />
+          <img src="../Asset/Icon-Linkedin.png" alt="LinkedIn" />
         </div>
       </div>
-      <div class="copyright">© Copyright Rimel 2022. All right reserved</div>
-    </footer>
-  </body>
-  <style></style>
-  <script>
-    function signUp() {
-      const name = document.getElementById("userName").value;
-      const email = document.getElementById("userEmail").value;
-      const password = document.getElementById("userPassword").value;
+    </div>
+    <div class="copyright">© Copyright Rimel 2022. All right reserved</div>
+  </footer>
+</body>
+<style></style>
+<script src="../Sign-Up/Sign-up.js"></script>
 
-      const userData = {
-        name: name,
-        email: email,
-        password: password,
-      };
-
-      console.log(userData);
-    }
-
-    function togglePass() {
-      const passwordInput = document.getElementById("userPassword");
-      const toggleIcon = document.getElementById("togglePassword");
-
-      if (passwordInput.type === "password") {
-        passwordInput.type = "text";
-        toggleIcon.classList.replace("fa-eye", "fa-eye-slash");
-      } else {
-        passwordInput.type = "password";
-        toggleIcon.classList.replace("fa-eye-slash", "fa-eye");
-      }
-    }
-  </script>
 </html>

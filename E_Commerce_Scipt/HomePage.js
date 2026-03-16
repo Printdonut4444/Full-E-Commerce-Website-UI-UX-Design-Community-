@@ -29,6 +29,28 @@ window.onload = function () {
       behavior: "smooth",
     });
   };
+  const buutonCarousel = document.getElementById("button-carousel");
+  for (let i = 0; i < 5; i++) {
+    const buttonList = document.createElement('div');
+    buttonList.style.width = "10px";
+    buttonList.style.height = "10px";
+    buttonList.style.backgroundColor = "#7D8184";
+    buttonList.style.borderRadius = "50%";
+    buttonList.style.cursor = "pointer";
+
+    buttonList.addEventListener("mouseover", () => {
+      buttonList.style.backgroundColor = "red";
+      buttonList.style.border = "2px solid white";
+      buttonList.style.boxSizing = "border-box";
+    });
+
+    buttonList.addEventListener("mouseleave", () => {
+      buttonList.style.backgroundColor = "#7D8184";
+      buttonList.style.borderWidth = "0px";
+    })
+
+    buutonCarousel.appendChild(buttonList);
+  }
 };
 
 const profileBtn = document.getElementById("profileBtn");
@@ -88,4 +110,29 @@ function onClickCart() {
 function onClickAccount() {
   window.location.href = "../Account/Account.html";
 }
+// function onClickAccount() {
+//     window.location.href = "../Account/Account.html";
+// }
 
+function onClickCart() {
+  window.location.href = "../Cart/Cart.html";
+}
+
+
+function link(link) {
+  switch (link) {
+    case "Home":
+      window.location.href = "../E_Commerce_Page/HomePage.html";
+      break;
+    case "SignUp":
+      window.location.href = "../Sign-Up/Sign-Up.html";
+      break;
+    case "About":
+      window.location.href = "../About/About.html";
+      break;
+    case "Contact":
+      window.location.href = "../Contact/Contact.html";
+      break;
+
+  }
+}

@@ -12,5 +12,6 @@ function link(link) {
     case "Contact":
       window.location.href = "../Contact/Contact.html";
       break;
+
   }
 }
