@@ -15,6 +15,9 @@ function link(link) {
     case "Wishlist":
       window.location.href = "../E_Commerce_Page/WishlistPage.html";
       break;
+    case "Account":
+      window.location.href = "../Account/Account.html";
+      break;
   }
 }
 

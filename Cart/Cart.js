@@ -12,5 +12,8 @@ function link(link) {
     case "Contact":
       window.location.href = "../Contact/Contact.html";
       break;
+    case "Cart":
+      window.location.href = "../Cart/Cart.html";
+      break;
   }
 }

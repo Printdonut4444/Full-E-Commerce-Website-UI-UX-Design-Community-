@@ -47,7 +47,9 @@
               <button onclick="link('Home')">Home</button>
             </div>
             <div>/</div>
-            <div class="clearbuttonH"><button>Contact</button></div>
+            <div class="clearbuttonH">
+              <button onclick="link('Contact')">Contact</button>
+            </div>
           </div>
         </div>
       </container1>
@@ -95,7 +97,11 @@
           <hr />
           <div class="InputMessage">
             <!-- <input type="textarea" placeholder="  Your Message" /> -->
-            <textarea placeholder="Your Message" id="message"></textarea>
+            <textarea
+              placeholder="Your Message"
+              id="message"
+              style="resize: none"
+            ></textarea>
           </div>
           <div class="Button-Save">
             <button onclick="Contact()">Send Message</button>
