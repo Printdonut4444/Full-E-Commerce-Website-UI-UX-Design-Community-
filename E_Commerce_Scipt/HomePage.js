@@ -707,29 +707,29 @@ profileBtn.addEventListener("click", function (event) {
   // event.stopPropagation();
 });
 
-const swichlanguage = document.getElementById("swichlanguage");
-const lgMenu = document.getElementById("lgMenu");
-swichlanguage.addEventListener("click", function (event) {
-  lgMenu.classList.toggle("show");
-  swichlanguage.classList.toggle("active");
+// const swichlanguage = document.getElementById("swichlanguage");
+// const lgMenu = document.getElementById("lgMenu");
+// swichlanguage.addEventListener("click", function (event) {
+//   lgMenu.classList.toggle("show");
+//   swichlanguage.classList.toggle("active");
 
-  // event.stopPropagation();
-});
-const lgThai = document.getElementById("lgThai");
-lgThai.addEventListener("click", function () {
-  swichlanguage.innerHTML = lgThai.innerHTML + ' &#9662';
-  // console.log(swichlanguage.innerText);
-});
-const lgEng = document.getElementById("lgEng");
-lgEng.addEventListener('click', function () {
-  swichlanguage.innerHTML = lgEng.innerHTML + ' &#9662';
-});
+//   // event.stopPropagation();
+// });
+// const lgThai = document.getElementById("lgThai");
+// lgThai.addEventListener("click",function(){
+//   swichlanguage.innerHTML = lgThai.innerHTML + ' &#9662';
+//   // console.log(swichlanguage.innerText);
+// })
+// const lgEng = document.getElementById("lgEng");
+// lgEng.addEventListener('click',function(){
+//   swichlanguage.innerHTML = lgEng.innerHTML + ' &#9662';
+// })
 
 document.addEventListener("click", function (event) {
-  if (!swichlanguage.contains(event.target) && !lgMenu.contains(event.target)) {
-    lgMenu.classList.remove("show");
-    swichlanguage.classList.remove("active");
-  }
+  // if (!swichlanguage.contains(event.target) && !lgMenu.contains(event.target)) {
+  //   lgMenu.classList.remove("show");
+  //   swichlanguage.classList.remove("active");
+  // }
   if (
     !profileBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
     dropdownMenu.classList.remove("show");
@@ -759,9 +759,6 @@ function onClickAccount() {
 //     window.location.href = "../Account/Account.html";
 // }
 
-function onClickCart() {
-  window.location.href = "../Cart/Cart.html";
-}
 
 
 function link(link) {
