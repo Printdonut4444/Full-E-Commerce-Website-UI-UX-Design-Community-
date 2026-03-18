@@ -98,9 +98,9 @@ html {
 
 /*  */
 .hidden-menu {
-  display: none; /* ซ่อนไว้ก่อน */
+  display: none;
   position: fixed;
-  top: 170px; /* ปรับให้พอดีกับตำแหน่งใต้ปุ่ม */
+  top: 170px;
   left: 25px;
   background: white;
   border: 1px solid #ddd;

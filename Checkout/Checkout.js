@@ -12,6 +12,15 @@ function link(link) {
     case "Contact":
       window.location.href = "../Contact/Contact.html";
       break;
+    case "Cart":
+      window.location.href = "../Cart/Cart.html";
+      break;
+    case "Account":
+      window.location.href = "../Account/Account.html";
+      break;
+    case "CheckOut":
+      location.reload();
+      break;
   }
 }
 
