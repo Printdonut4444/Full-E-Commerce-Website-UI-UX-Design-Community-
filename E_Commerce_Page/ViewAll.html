@@ -1,225 +1,440 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../E_Commerce_PageStyle/LayoutStyle.css" />
+    <link rel="stylesheet" href="../E_Commerce_PageStyle/ViewAll.css" />
+    <title>ViewAll</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../E_Commerce_PageStyle/LayoutStyle.css">
-  <link rel="stylesheet" href="../E_Commerce_PageStyle/ViewAll.css">
-  <title>ViewAll</title>
-</head>
-
-<body>
-  <nav>
-    <div class="announcement">
-      <span style="visibility: hidden;">English</span>
-      <span>Summer sale for All Swim suits And Free Express Delivery - OFF 50%
-        <a rel="ShopNow" href="HomePage.html">Shop Now</a></span>
-      <button class="switch-lang">English</button>
-    </div>
-  </nav>
-  <nav class="Top-menu" id="topmenu" style="position: sticky; top: 0; z-index: 1000;">
-    <div><strong style="font-size: 20px">Exclusive</strong></div>
-    <ul>
-      <li onclick="link('Home')">Home</li>
-      <li onclick="link('Contact')">Contact</li>
-      <li onclick="link('About')">About</li>
-      <li onclick="link('SignUp')">Sign up</li>
-    </ul>
-    <div class="shoppingbar">
-      <div class="search-input">
-        <input type="search" placeholder="what are you looking for?" />
-        <img src="../Asset//search.svg" alt="search-icon" style="cursor: pointer;">
+  <body>
+    <nav>
+      <div class="announcement">
+        <span style="visibility: hidden">English</span>
+        <span
+          >Summer sale for All Swim suits And Free Express Delivery - OFF 50%
+          <a rel="ShopNow" href="HomePage.html">Shop Now</a></span
+        >
+        <button class="switch-lang">English</button>
       </div>
-      <button class="profile-btn" onclick="onClickWishlist()">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-          <path
-            d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8v-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5v3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20c0 0-.1-.1-.1-.1c0 0 0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5v3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2v-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z" />
-        </svg>
-      </button>
-      <button class="profile-btn" onclick="onClickCart()">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-          <g id="_x30_3_Shopping_Cart_x2C__Sale_x2C__Supermarket_x2C__Flower_x2C__Commerce_and_Shopping">
-            <g>
-              <path d="M115.999,361c355.967,0,335.977,0.362,338.674-0.706c2.997-1.185,5.267-3.733,6.042-6.963
-			c0.164-0.684,16.824-94.11,50.129-280.573c1.091-6.12-3.615-11.758-9.845-11.758H78.206L60.486,7.838
-			C59.124,3.754,55.303,1,50.999,1h-40c-5.523,0-10,4.477-10,10s4.477,10,10,10h32.792c10.141,30.424,95.041,285.132,106.664,320
-			h-34.456c-19.299,0-35,15.701-35,35s15.701,35,35,35h25v21.266c-17.233,4.452-30,20.13-30,38.734c0,22.056,17.944,40,40,40
-			s40-17.944,40-40c0-18.604-12.767-34.282-30-38.734V411h220v21.266c-17.233,4.452-30,20.13-30,38.734c0,22.056,17.944,40,40,40
-			s40-17.944,40-40c0-18.604-12.767-34.282-30-38.734V411h50c5.522,0,10-4.477,10-10s-4.478-10-10-10h-335c-8.271,0-15-6.729-15-15
-			S107.728,361,115.999,361z M131.538,221h49.327l16.667,50h-49.328L131.538,221z M331.414,151v50h-50v-50H331.414z M407.685,151
-			c-2.545,14.257-5.626,31.516-8.927,50h-47.345v-50H407.685z M467.626,201h-48.551c3.337-18.687,6.425-35.985,8.927-50h48.553
-			L467.626,201z M455.126,271h-48.551c2.93-16.409,5.976-33.464,8.929-50h48.551L455.126,271z M351.414,341v-50h31.274
-			c-3.454,19.338-6.565,36.761-8.93,50H351.414z M331.414,291v50h-50v-50H331.414z M281.414,271v-50h50v50H281.414z M351.414,271
-			v-50h43.774c-2.967,16.619-6.013,33.675-8.928,50H351.414z M261.414,201H195.28l-16.667-50h82.801V201z M157.531,151l16.667,50
-			h-49.327l-16.666-50H157.531z M201.946,221h59.467v50h-42.801L201.946,221z M261.414,291v50h-19.467l-16.667-50H261.414z
-			 M394.073,341c2.426-13.582,5.528-30.951,8.93-50h48.552l-8.928,50H394.073z M489.054,81l-8.928,50c-17.471,0-357.227,0-378.587,0
-			L84.873,81H489.054z M154.87,291h49.328l16.667,50h-49.328L154.87,291z M170.999,471c0,11.028-8.972,20-20,20s-20-8.972-20-20
-			s8.972-20,20-20S170.999,459.972,170.999,471z M410.999,471c0,11.028-8.972,20-20,20s-20-8.972-20-20s8.972-20,20-20
-			S410.999,459.972,410.999,471z" />
-            </g>
-          </g>
-          <g id="Layer_1">
-          </g>
-        </svg>
-      </button>
-      <!-- dropdown -->
-      <div class="profile-dropdown-container">
-        <button class="profile-btn" id="profileBtn">
-          <svg class="profile-icon" viewBox="0 0 24 24" stroke-width="1">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
+    </nav>
+    <nav
+      class="Top-menu"
+      id="topmenu"
+      style="position: sticky; top: 0; z-index: 1000"
+    >
+      <div><strong style="font-size: 20px">Exclusive</strong></div>
+      <ul>
+        <li onclick="link('Home')">Home</li>
+        <li onclick="link('Contact')">Contact</li>
+        <li onclick="link('About')">About</li>
+        <li onclick="link('SignUp')">Sign up</li>
+      </ul>
+      <div class="shoppingbar">
+        <div class="search-input">
+          <input type="search" placeholder="what are you looking for?" />
+          <img
+            src="../Asset//search.svg"
+            alt="search-icon"
+            style="cursor: pointer"
+          />
+        </div>
+        <button class="profile-btn" onclick="onClickWishlist()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path
+              d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8v-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5v3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20c0 0-.1-.1-.1-.1c0 0 0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5v3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2v-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"
+            />
           </svg>
         </button>
-
-        <div class="dropdown-menu" id="dropdownMenu">
-          <a href="#" class="menu-item" onclick="onClickAccount()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <button class="profile-btn" onclick="onClickCart()">
+          <svg
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 512 512"
+            style="enable-background: new 0 0 512 512"
+            xml:space="preserve"
+          >
+            <g
+              id="_x30_3_Shopping_Cart_x2C__Sale_x2C__Supermarket_x2C__Flower_x2C__Commerce_and_Shopping"
+            >
+              <g>
+                <path
+                  d="M115.999,361c355.967,0,335.977,0.362,338.674-0.706c2.997-1.185,5.267-3.733,6.042-6.963
+        c0.164-0.684,16.824-94.11,50.129-280.573c1.091-6.12-3.615-11.758-9.845-11.758H78.206L60.486,7.838
+        C59.124,3.754,55.303,1,50.999,1h-40c-5.523,0-10,4.477-10,10s4.477,10,10,10h32.792c10.141,30.424,95.041,285.132,106.664,320
+        h-34.456c-19.299,0-35,15.701-35,35s15.701,35,35,35h25v21.266c-17.233,4.452-30,20.13-30,38.734c0,22.056,17.944,40,40,40
+        s40-17.944,40-40c0-18.604-12.767-34.282-30-38.734V411h220v21.266c-17.233,4.452-30,20.13-30,38.734c0,22.056,17.944,40,40,40
+        s40-17.944,40-40c0-18.604-12.767-34.282-30-38.734V411h50c5.522,0,10-4.477,10-10s-4.478-10-10-10h-335c-8.271,0-15-6.729-15-15
+        S107.728,361,115.999,361z M131.538,221h49.327l16.667,50h-49.328L131.538,221z M331.414,151v50h-50v-50H331.414z M407.685,151
+        c-2.545,14.257-5.626,31.516-8.927,50h-47.345v-50H407.685z M467.626,201h-48.551c3.337-18.687,6.425-35.985,8.927-50h48.553
+        L467.626,201z M455.126,271h-48.551c2.93-16.409,5.976-33.464,8.929-50h48.551L455.126,271z M351.414,341v-50h31.274
+        c-3.454,19.338-6.565,36.761-8.93,50H351.414z M331.414,291v50h-50v-50H331.414z M281.414,271v-50h50v50H281.414z M351.414,271
+        v-50h43.774c-2.967,16.619-6.013,33.675-8.928,50H351.414z M261.414,201H195.28l-16.667-50h82.801V201z M157.531,151l16.667,50
+        h-49.327l-16.666-50H157.531z M201.946,221h59.467v50h-42.801L201.946,221z M261.414,291v50h-19.467l-16.667-50H261.414z
+        M394.073,341c2.426-13.582,5.528-30.951,8.93-50h48.552l-8.928,50H394.073z M489.054,81l-8.928,50c-17.471,0-357.227,0-378.587,0
+        L84.873,81H489.054z M154.87,291h49.328l16.667,50h-49.328L154.87,291z M170.999,471c0,11.028-8.972,20-20,20s-20-8.972-20-20
+        s8.972-20,20-20S170.999,459.972,170.999,471z M410.999,471c0,11.028-8.972,20-20,20s-20-8.972-20-20s8.972-20,20-20
+        S410.999,459.972,410.999,471z"
+                />
+              </g>
+            </g>
+            <g id="Layer_1"></g>
+          </svg>
+        </button>
+        <!-- dropdown -->
+        <div class="profile-dropdown-container">
+          <button class="profile-btn" id="profileBtn">
+            <svg class="profile-icon" viewBox="0 0 24 24" stroke-width="1">
               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
               <circle cx="12" cy="7" r="4"></circle>
             </svg>
-            <span>Manage My Account</span>
-          </a>
-          <a href="#" class="menu-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-              <line x1="16" y1="2" x2="16" y2="6"></line>
-              <line x1="8" y1="2" x2="8" y2="6"></line>
-              <line x1="3" y1="10" x2="21" y2="10"></line>
-            </svg>
-            <span>My Order</span>
-          </a>
-          <a href="#" class="menu-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="15" y1="9" x2="9" y2="15"></line>
-              <line x1="9" y1="9" x2="15" y2="15"></line>
-            </svg>
-            <span>My Cancellations</span>
-          </a>
-          <a href="#" class="menu-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-              </polygon>
-            </svg>
-            <span>My Reviews</span>
-          </a>
-          <a href="#" class="menu-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-              <polyline points="16 17 21 12 16 7"></polyline>
-              <line x1="21" y1="12" x2="9" y2="12"></line>
-            </svg>
-            <span>Logout</span>
-          </a>
-        </div>
-      </div>
-      <!-- dropdown -->
-    </div>
-  </nav>
+          </button>
 
-
-  <div style="display: flex; flex-direction: column; margin: 10px;">
-    <div style="display: flex; flex-direction: row;">
-      <div class="product-space" style=" margin: 20px 10px 10px 90px;">
-        <div>
-          <div style="display: flex; align-items: center;">
-            <div style="background-color: #DB4444; width: 20px; height: 40px; border-radius: 5px;"></div>
-            <div style="font-size: 16px; color: #DB4444; margin-left: 20px; font-weight: bold;">Related Item</div>
+          <div class="dropdown-menu" id="dropdownMenu">
+            <a href="#" class="menu-item" onclick="onClickAccount()">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span>Manage My Account</span>
+            </a>
+            <a href="#" class="menu-item">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>My Order</span>
+            </a>
+            <a href="#" class="menu-item">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="15" y1="9" x2="9" y2="15"></line>
+                <line x1="9" y1="9" x2="15" y2="15"></line>
+              </svg>
+              <span>My Cancellations</span>
+            </a>
+            <a href="#" class="menu-item">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                ></polygon>
+              </svg>
+              <span>My Reviews</span>
+            </a>
+            <a href="#" class="menu-item">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <polyline points="16 17 21 12 16 7"></polyline>
+                <line x1="21" y1="12" x2="9" y2="12"></line>
+              </svg>
+              <span>Logout</span>
+            </a>
           </div>
         </div>
-        <div id="related-item"
-          style="margin-top: 30px; justify-content: space-between; align-items: center; gap: 20px;"></div>
-        <div style="display: flex; justify-content: center;margin: 20px;">
-          <button
-            style="background-color: white; border: 0 ; border-radius: 4px; color: #DB4444; width: 120px; height: 30px; cursor: pointer;">LOAD
-            MORE</button>
-        </div>
+        <!-- dropdown -->
       </div>
+    </nav>
 
-      <div class="promotion" style="  margin: 20px 10px 10px 0px; width: 100%;">
-        <nav
-          style="background-color: palegreen; margin: 1px; display: flex; justify-content: center; align-items: center; height: 390px; width: 154px; position: fixed; z-index: 999; ">
-          <img style="object-fit: contain; width: 90%; height: 90%;" src="../Asset/Frame 707.png" alt="">
-        </nav>
-      </div>
-    </div>
+    <div style="display: flex; flex-direction: column; margin: 10px">
+      <div style="display: flex; flex-direction: row">
+        <aside style="width: 10px; flex-shrink: 0; position: relative">
+          <div style="position: sticky; top: 120px; z-index: 999">
+            <div
+              id="filter-button"
+              style="
+                background-color: #db4444;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                color: white;
+                margin-left: 10px;
+              "
+            >
+              O
+            </div>
 
-    <div id="filter-button"
-      style="position: fixed; z-index: 999; background-color: #DB4444; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; margin-left: 10px; margin-top: 10px;">
-      O</div>
-    <div id="filter-menu" class="hidden-menu">
-      <h4>Category</h4>
-      <ul>
-        <li><input type="checkbox" value="electronics"> Electronics</li>
-        <li><input type="checkbox" value="gaming"> Gaming</li>
-        <li><input type="checkbox" value="accessories"> Accessories</li>
-      </ul>
-      <hr>
-      <button id="apply-filter">Apply</button>
-    </div>
-  </div>
-
-
-  <footer class="bottom-menu" style="position: relative; z-index: 1000;">
-    <div class="footer-container">
-      <div class="box">
-        <strong style="font-size: 24px;">Exclusive</strong>
-        <div style="font-size: 20px;">Subscribe</div>
-        <div style="font-size: 16px;" class="text-desc">Get 10% off your first order</div>
-        <input type="text" placeholder="Enter your email" />
-      </div>
-      <div class="box">
-        <strong style="font-size: 18px;">Support</strong>
-        <div style="font-size: 16px;" class="text-desc">111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</div>
-        <div style="font-size: 16px;" class="text-desc">exclusive@gmail.com</div>
-        <div style="font-size: 16px;" class="text-desc">+88015-88888-9999</div>
-      </div>
-      <div class="box">
-        <strong style="font-size: 18px;">Account</strong>
-        <div style="font-size: 16px;" class="text-desc">My Account</div>
-        <div style="font-size: 16px;" class="text-desc">Login / Register</div>
-        <div style="font-size: 16px;" class="text-desc">Cart</div>
-        <div style="font-size: 16px;" class="text-desc">Wishlist</div>
-        <div style="font-size: 16px;" class="text-desc">Shop</div>
-      </div>
-      <div class="box">
-        <strong style="font-size: 18px;">Quick link</strong>
-        <div style="font-size: 16px;" class="text-desc">Privacy Policy</div>
-        <div style="font-size: 16px;" class="text-desc">Terms Of Use</div>
-        <div style="font-size: 16px;" class="text-desc">FAQ</div>
-        <div style="font-size: 16px;" class="text-desc">Contact</div>
-      </div>
-      <div class="box">
-        <strong style="font-size: 20px;">Download App</strong>
-        <div style="font-size: 12px; color: lightgray;">Save $3 with App New User Only</div>
-        <div>
-          <div class="img-app">
-            <img src="../Asset/Qr Code.png" alt="Download App" style="width: 80px; height: 80px;">
-            <div class="img-storeapp">
-              <img
-                src="../Asset/png-transparent-google-play-store-logo-google-play-app-store-android-wallets-text-label-logo.png"
-                alt="Google Play Store">
-              <img src="../Asset/download-appstore.png" alt="App Store">
+            <div
+              id="filter-menu"
+              class="hidden-menu"
+              style="
+                display: none;
+                position: absolute; /* เปลี่ยนเพื่อให้เกาะกับปุ่ม */
+                top: 60px; /* ระยะห่างจากตัวปุ่ม */
+                left: 10px;
+                background: white;
+                border: 1px solid #ddd;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                padding: 15px;
+                width: 200px;
+                border-radius: 8px;
+                color: black;
+              "
+            >
+              <h4 style="margin-top: 0">Category</h4>
+              <ul style="list-style: none; padding: 0">
+                <li>
+                  <input type="checkbox" value="electronics" /> Electronics
+                </li>
+                <li><input type="checkbox" value="gaming" /> Gaming</li>
+                <li>
+                  <input type="checkbox" value="accessories" /> Accessories
+                </li>
+              </ul>
+              <hr />
+              <button
+                id="apply-filter"
+                style="
+                  width: 100%;
+                  background: #db4444;
+                  color: white;
+                  border: none;
+                  padding: 5px;
+                  cursor: pointer;
+                "
+              >
+                Apply
+              </button>
             </div>
           </div>
+        </aside>
+        <div class="product-space" style="margin: 20px 10px 10px 90px">
+          <div>
+            <div style="display: flex; align-items: center">
+              <div
+                style="
+                  background-color: #db4444;
+                  width: 20px;
+                  height: 40px;
+                  border-radius: 5px;
+                "
+              ></div>
+              <div
+                style="
+                  font-size: 16px;
+                  color: #db4444;
+                  margin-left: 20px;
+                  font-weight: bold;
+                "
+              >
+                Related Item
+              </div>
+            </div>
+          </div>
+          <div
+            id="related-item"
+            style="
+              margin-top: 30px;
+              justify-content: space-between;
+              align-items: center;
+              gap: 20px;
+            "
+          ></div>
+          <div style="display: flex; justify-content: center; margin: 20px">
+            <button
+              style="
+                background-color: white;
+                border: 0;
+                border-radius: 4px;
+                color: #db4444;
+                width: 120px;
+                height: 30px;
+                cursor: pointer;
+              "
+            >
+              LOAD MORE
+            </button>
+          </div>
         </div>
-        <div class="img-social">
-          <img src="../Asset/Icon-Facebook.png" alt="Facebook">
-          <img src="../Asset/Icon-Twitter.png" alt="Twitter">
-          <img src="../Asset/icon-instagram.png" alt="Instagram">
-          <img src="../Asset/Icon-Linkedin.png" alt="LinkedIn">
+
+        <div
+          class="promotion"
+          style="margin: 20px 10px 10px 0px; width: 100%"
+          flex-shrink:
+          0
+        >
+          <nav
+            style="
+              background-color: palegreen;
+              margin: 1px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 390px;
+              width: 154px;
+              position: sticky;
+              top: 120px;
+              z-index: 999;
+            "
+          >
+            <img
+              style="object-fit: contain; width: 90%; height: 90%"
+              src="../Asset/Frame 707.png"
+              alt=""
+            />
+          </nav>
+        </div>
+        <!-- <div
+          class="promotion"
+          style="margin: 20px 10px 10px 0px; width: 154px; flex-shrink: 0"
+        >
+          <nav
+            style="
+              background-color: palegreen;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 390px;
+              width: 154px;
+
+              position: sticky;
+              top: 120px;
+              z-index: 998;
+              margin: 1px;
+            "
+          >
+            <img
+              style="object-fit: contain; width: 90%; height: 90%"
+              src="../Asset/Frame 707.png"
+              alt="Promotion Banner"
+            />
+          </nav>
+        </div> -->
+      </div>
+
+      <!-- <div
+        id="filter-button"
+        style="
+          position: fixed;
+          z-index: 999;
+          background-color: #db4444;
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: 10px;
+          margin-top: 10px;
+        "
+      >
+        O
+      </div>
+      <div id="filter-menu" class="hidden-menu">
+        <h4>Category</h4>
+        <ul>
+          <li><input type="checkbox" value="electronics" /> Electronics</li>
+          <li><input type="checkbox" value="gaming" /> Gaming</li>
+          <li><input type="checkbox" value="accessories" /> Accessories</li>
+        </ul>
+        <hr />
+        <button id="apply-filter">Apply</button>
+      </div> -->
+
+      <!-- ------------------------------------------------------------------------------------ -->
+    </div>
+
+    <footer class="bottom-menu" style="position: relative; z-index: 1000">
+      <div class="footer-container">
+        <div class="box">
+          <strong style="font-size: 24px">Exclusive</strong>
+          <div style="font-size: 20px">Subscribe</div>
+          <div style="font-size: 16px" class="text-desc">
+            Get 10% off your first order
+          </div>
+          <input type="text" placeholder="Enter your email" />
+        </div>
+        <div class="box">
+          <strong style="font-size: 18px">Support</strong>
+          <div style="font-size: 16px" class="text-desc">
+            111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.
+          </div>
+          <div style="font-size: 16px" class="text-desc">
+            exclusive@gmail.com
+          </div>
+          <div style="font-size: 16px" class="text-desc">+88015-88888-9999</div>
+        </div>
+        <div class="box">
+          <strong style="font-size: 18px">Account</strong>
+          <div style="font-size: 16px" class="text-desc">My Account</div>
+          <div style="font-size: 16px" class="text-desc">Login / Register</div>
+          <div style="font-size: 16px" class="text-desc">Cart</div>
+          <div style="font-size: 16px" class="text-desc">Wishlist</div>
+          <div style="font-size: 16px" class="text-desc">Shop</div>
+        </div>
+        <div class="box">
+          <strong style="font-size: 18px">Quick link</strong>
+          <div style="font-size: 16px" class="text-desc">Privacy Policy</div>
+          <div style="font-size: 16px" class="text-desc">Terms Of Use</div>
+          <div style="font-size: 16px" class="text-desc">FAQ</div>
+          <div style="font-size: 16px" class="text-desc">Contact</div>
+        </div>
+        <div class="box">
+          <strong style="font-size: 20px">Download App</strong>
+          <div style="font-size: 12px; color: lightgray">
+            Save $3 with App New User Only
+          </div>
+          <div>
+            <div class="img-app">
+              <img
+                src="../Asset/Qr Code.png"
+                alt="Download App"
+                style="width: 80px; height: 80px"
+              />
+              <div class="img-storeapp">
+                <img
+                  src="../Asset/png-transparent-google-play-store-logo-google-play-app-store-android-wallets-text-label-logo.png"
+                  alt="Google Play Store"
+                />
+                <img src="../Asset/download-appstore.png" alt="App Store" />
+              </div>
+            </div>
+          </div>
+          <div class="img-social">
+            <img src="../Asset/Icon-Facebook.png" alt="Facebook" />
+            <img src="../Asset/Icon-Twitter.png" alt="Twitter" />
+            <img src="../Asset/icon-instagram.png" alt="Instagram" />
+            <img src="../Asset/Icon-Linkedin.png" alt="LinkedIn" />
+          </div>
         </div>
       </div>
-    </div>
-    <div class="copyright">
-      © Copyright Rimel 2022. All right reserved
-    </div>
-  </footer>
+      <div class="copyright">© Copyright Rimel 2022. All right reserved</div>
+    </footer>
 
-  <script src="../E_Commerce_Scipt/ViewAll.js"></script>
-</body>
-
+    <script src="../E_Commerce_Scipt/ViewAll.js"></script>
+  </body>
 </html>
