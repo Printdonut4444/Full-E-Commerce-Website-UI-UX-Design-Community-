@@ -168,7 +168,15 @@
 
     <div style="display: flex; flex-direction: column; margin: 10px">
       <div style="display: flex; flex-direction: row">
-        <aside style="width: 10px; flex-shrink: 0; position: relative">
+        <aside
+          style="
+            width: 10px;
+            flex-shrink: 0;
+            /* position: relative; */
+            align-self: stretch;
+            padding-bottom: 300px;
+          "
+        >
           <div style="position: sticky; top: 120px; z-index: 999">
             <div
               id="filter-button"
@@ -193,8 +201,8 @@
               class="hidden-menu"
               style="
                 display: none;
-                position: absolute; /* เปลี่ยนเพื่อให้เกาะกับปุ่ม */
-                top: 60px; /* ระยะห่างจากตัวปุ่ม */
+                position: absolute;
+                top: 60px;
                 left: 10px;
                 background: white;
                 border: 1px solid #ddd;
@@ -308,6 +316,7 @@
             />
           </nav>
         </div>
+        <!-- ------------------------------------------------------------------------------------ -->
         <!-- <div
           class="promotion"
           style="margin: 20px 10px 10px 0px; width: 154px; flex-shrink: 0"

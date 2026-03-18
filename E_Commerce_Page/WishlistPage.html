@@ -1,721 +1,1886 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../E_Commerce_PageStyle/WishlistPage.css" />
+    <link rel="stylesheet" href="../E_Commerce_PageStyle/LayoutStyle.css" />
+    <title>Wishlist</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../E_Commerce_PageStyle/WishlistPage.css">
-  <link rel="stylesheet" href="../E_Commerce_PageStyle/LayoutStyle.css">
-  <title>Wishlist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+  </head>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-</head>
+  <body>
+    <nav>
+      <div class="announcement">
+        <span style="visibility: hidden">English</span>
+        <span
+          >Summer sale for All Swim suits And Free Express Delivery - OFF 50%
+          <a rel="ShopNow" href="HomePage.html">Shop Now</a></span
+        >
+        <button class="switch-lang">English</button>
+      </div>
+    </nav>
+    <nav class="Top-menu">
+      <div><strong style="font-size: 20px">Exclusive</strong></div>
+      <ul>
+        <li onclick="link('Home')">Home</li>
+        <li onclick="link('Contact')">Contact</li>
+        <li onclick="link('About')">About</li>
+        <li onclick="link('SignUp')">Sign up</li>
+      </ul>
+      <div class="search-input">
+        <input type="search" placeholder="what are you looking for?" />
+        <img
+          src="../Asset//search.svg"
+          alt="search-icon"
+          style="cursor: pointer"
+        />
+      </div>
+    </nav>
 
-<body>
-  <nav>
-    <div class="announcement">
-      <span style="visibility: hidden;">English</span>
-      <span>Summer sale for All Swim suits And Free Express Delivery - OFF 50%
-        <a rel="ShopNow" href="HomePage.html">Shop Now</a></span>
-      <button class="switch-lang">English</button>
-    </div>
-  </nav>
-  <nav class="Top-menu">
-    <div><strong style="font-size: 20px">Exclusive</strong></div>
-    <ul>
-      <li onclick="link('Home')">Home</li>
-      <li onclick="link('Contact')">Contact</li>
-      <li onclick="link('About')">About</li>
-      <li onclick="link('SignUp')">Sign up</li>
-    </ul>
-    <div class="search-input">
-      <input type="search" placeholder="what are you looking for?" />
-      <img src="../Asset//search.svg" alt="search-icon" style="cursor: pointer;">
-    </div>
-  </nav>
-
-  <div style="display: flex; flex-direction: column; margin: 100px; gap: 80px;">
-    <div class="Wishlist">
-      <div class="headmenu"
-        style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding-bottom: 60px;">
-        <div>
-          <p style="font-weight: 400; font-size: 20px;">Wishlist (<span id="count_cart">4</span>)</p>
+    <div
+      style="display: flex; flex-direction: column; margin: 100px; gap: 80px"
+    >
+      <div class="Wishlist">
+        <div
+          class="headmenu"
+          style="
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 60px;
+          "
+        >
+          <div>
+            <p style="font-weight: 400; font-size: 20px">
+              Wishlist (<span id="count_cart">4</span>)
+            </p>
+          </div>
+          <div
+            style="
+              background-color: white;
+              border: 1px solid black;
+              width: 223px;
+              height: 56px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 5px;
+              font-weight: 600;
+              cursor: pointer;
+            "
+          >
+            Move All To Bag
+          </div>
         </div>
         <div
-          style="background-color: white; border: 1px solid black; width: 223px; height: 56px; display: flex; justify-content: center;align-items: center; border-radius: 5px; font-weight: 600; cursor: pointer;">
-          Move All To Bag
-        </div>
-      </div>
-      <div class="productmenu" style="display: flex; flex-direction: row; gap: 30px;">
-        <div class="productCard" style="width: 240px;height: 322px; ">
-          <div class="productimg"
-            style="background-color: #F5F5F5; border-radius: 5px; width: 240px; height: 250px; position: relative; display: flex; justify-content: center;align-items: center;">
-            <!-- img -->
-            <img src="../Asset/Productbag.png" alt="bag">
+          class="productmenu"
+          style="display: flex; flex-direction: row; gap: 30px"
+        >
+          <div class="productCard" style="width: 240px; height: 322px">
+            <div
+              class="productimg"
+              style="
+                background-color: #f5f5f5;
+                border-radius: 5px;
+                width: 240px;
+                height: 250px;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <!-- img -->
+              <img src="../Asset/Productbag.png" alt="bag" />
 
-            <div
-              style="position: absolute; z-index: 10; top: 10px; left: 10px; font-size: 14px; width: 55px; height: 26px; background-color: #db4444;color: white ; border-radius: 5px; display: flex; justify-content: center; align-items: center;">
-              -35%</div>
-            <div
-              style="position: absolute; z-index: 10;top: 10px; right: 10px; background-color: white; width: 34px;height: 34px; display: flex; justify-content: center;align-items: center;border-radius: 50%; cursor: pointer;">
-              <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M16.7798 3.35143H2.11312L3.44645 18.78H14.1131L15.4465 3.35143H0.779785M8.77979 7.20857V14.9229M12.1131 7.20857L11.4465 14.9229M5.44645 7.20857L6.11312 14.9229M6.11312 3.35143L6.77979 0.779999H10.7798L11.4465 3.35143"
-                  stroke="black" stroke-width="1.56" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-
-            </div>
-
-            <div
-              style="width: 240px; height: 41px; gap: 5px; background-color: black; border-radius: 5px; position: absolute; z-index: 10; bottom: 0px; color: white;display: flex; justify-content: center;align-items: center; cursor: pointer;">
-              <!-- icon cart -->
-              <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                  d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M3 5H7L10 22H26" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path
-                  d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              <p>Add To Cart</p>
-            </div>
-          </div>
-          <div>
-            <p>Gucci duffle bag</p>
-            <p style="color: #db4444; font-weight: 600;">$960 <s style="color: rgb(165, 162, 162);">$1160</s></p>
-          </div>
-        </div>
-        <!--  -->
-
-        <div class="productCard" style="width: 240px;height: 322px; ">
-          <div class="productimg"
-            style="background-color: #F5F5F5; border-radius: 5px; width: 240px; height: 250px; position: relative; display: flex; justify-content: center;align-items: center;">
-            <!-- img -->
-            <img src="../Asset/gammaxx-l240-argb-1-500x500 1.png" alt="bag">
-
-            <div
-              style="position: absolute; z-index: 10; top: 10px; left: 10px; font-size: 14px; width: 55px; height: 26px; background-color: #db4444; color: white; border-radius: 5px; display: none; justify-content: center; align-items: center;">
-              -35%
-            </div>
-            <div
-              style="position: absolute; z-index: 10; top: 10px; right: 10px;  background-color: white; width: 34px;height: 34px; display: flex; justify-content: center;align-items: center;border-radius: 50%; cursor: pointer;">
-              <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M16.7798 3.35143H2.11312L3.44645 18.78H14.1131L15.4465 3.35143H0.779785M8.77979 7.20857V14.9229M12.1131 7.20857L11.4465 14.9229M5.44645 7.20857L6.11312 14.9229M6.11312 3.35143L6.77979 0.779999H10.7798L11.4465 3.35143"
-                  stroke="black" stroke-width="1.56" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-
-            </div>
-            <div
-              style="width: 240px; height: 41px; gap: 5px; background-color: black; border-radius: 5px; position: absolute; z-index: 10; bottom: 0px; color: white;display: flex; justify-content: center;align-items: center; cursor: pointer;">
-              <!-- icon cart -->
-              <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                  d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M3 5H7L10 22H26" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path
-                  d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              <p>Add To Cart</p>
-            </div>
-          </div>
-          <div>
-            <p>RGB liquid CPU Cooler</p>
-            <p style="color: #db4444; font-weight: 600;">$1960</p>
-          </div>
-        </div>
-        <div class="productCard" style="width: 240px;height: 322px; ">
-          <div class="productimg"
-            style="background-color: #F5F5F5; border-radius: 5px; width: 240px; height: 250px; position: relative; display: flex; justify-content: center;align-items: center;">
-            <!-- img -->
-            <img style="width: 150px;" src="../Asset/GP11_PRD3 1.png" alt="bag">
-
-            <div
-              style=" position: absolute; z-index: 10; top: 10px; left: 10px;  font-size: 14px; width: 55px; height: 26px; background-color: #db4444;color: white; border-radius: 5px; display: none; justify-content: center; align-items: center;">
-              -35%</div>
-            <div
-              style=" position: absolute; z-index: 10; top: 10px; right: 10px; background-color: white; width: 34px;height: 34px; display: flex; justify-content: center;align-items: center;border-radius: 50%; cursor: pointer;">
-              <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M16.7798 3.35143H2.11312L3.44645 18.78H14.1131L15.4465 3.35143H0.779785M8.77979 7.20857V14.9229M12.1131 7.20857L11.4465 14.9229M5.44645 7.20857L6.11312 14.9229M6.11312 3.35143L6.77979 0.779999H10.7798L11.4465 3.35143"
-                  stroke="black" stroke-width="1.56" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <div
-              style="width: 240px; height: 41px; gap: 5px; background-color: black; border-radius: 5px; position: absolute; z-index: 10; bottom: 0px; color: white;display: flex; justify-content: center;align-items: center; cursor: pointer;">
-              <!-- icon cart -->
-              <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                  d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M3 5H7L10 22H26" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path
-                  d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              <p>Add To Cart</p>
-            </div>
-          </div>
-          <div>
-            <p>GP11 Shooter USB Gamepad</p>
-            <p style="color: #db4444; font-weight: 600;">$550</p>
-          </div>
-        </div>
-        <div class="productCard" style="width: 240px;height: 322px; ">
-          <div class="productimg"
-            style="background-color: #F5F5F5; border-radius: 5px; width: 240px; height: 250px; position: relative; display: flex; justify-content: center;align-items: center;">
-            <!-- img -->
-            <img width="150px" src="../Asset/satin-jacket.png" alt="bag">
-
-            <div
-              style="position: absolute; z-index: 10; top: 10px; left: 10px; font-size: 14px; width: 55px; height: 26px; background-color: #db4444;color: white; border-radius: 5px; display: none; justify-content: center; align-items: center;">
-              -35%</div>
-            <div
-              style="position: absolute; z-index: 10; top: 10px;right: 10px; background-color: white; width: 34px;height: 34px; display: flex; justify-content: center;align-items: center;border-radius: 50%; cursor: pointer;">
-              <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M16.7798 3.35143H2.11312L3.44645 18.78H14.1131L15.4465 3.35143H0.779785M8.77979 7.20857V14.9229M12.1131 7.20857L11.4465 14.9229M5.44645 7.20857L6.11312 14.9229M6.11312 3.35143L6.77979 0.779999H10.7798L11.4465 3.35143"
-                  stroke="black" stroke-width="1.56" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-
-            </div>
-            <div
-              style="width: 240px; height: 41px; gap: 5px; background-color: black; border-radius: 5px; position: absolute; z-index: 10; bottom: 0px; color: white;display: flex; justify-content: center;align-items: center; cursor: pointer;">
-              <!-- icon cart -->
-              <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                  d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M3 5H7L10 22H26" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path
-                  d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              <p>Add To Cart</p>
-            </div>
-          </div>
-          <div>
-            <p>Quilted Satin Jacket</p>
-            <p style="color: #db4444; font-weight: 600;">$750</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="justForyou">
-      <div class="headmenu"
-        style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding-bottom: 60px;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <div style="background-color: #DB4444; width: 20px; height: 40px; border-radius: 5px;"></div>
-          <p style="font-weight: 400; font-size: 20px;">Just For You</p>
-        </div>
-        <div
-          style="background-color: white; border: 1px solid black; width: 150px; height: 56px; display: flex; justify-content: center;align-items: center; border-radius: 5px; font-weight: 600; cursor: pointer;">
-          See All
-        </div>
-      </div>
-      <div class="productmenu" style="display: flex; flex-direction: row; gap: 30px;">
-        <div class="productCard" style="width: 240px;height: 322px; ">
-          <div class="productimg"
-            style="background-color: #F5F5F5; border-radius: 5px; width: 240px; height: 250px; position: relative; display: flex; justify-content: center;align-items: center;">
-            <!-- img -->
-            <img src="../Asset/Productbag.png" alt="bag">
-
-            <div
-              style="position: absolute; z-index: 10; top: 10px; left: 10px; font-size: 14px; width: 55px; height: 26px; background-color: #db4444;color: white ; border-radius: 5px; display: flex; justify-content: center; align-items: center;">
-              -35%</div>
-            <div
-              style="position: absolute; z-index: 10;top: 10px; right: 10px; background-color: white; width: 34px;height: 34px; display: flex; justify-content: center;align-items: center;border-radius: 50%; cursor: pointer;">
-              <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M19.6198 6.712C20.0938 7.332 20.0938 8.169 19.6198 8.788C18.1268 10.737 14.5448 14.75 10.3628 14.75C6.1808 14.75 2.5988 10.737 1.1058 8.788C0.875187 8.49113 0.75 8.12592 0.75 7.75C0.75 7.37408 0.875187 7.00887 1.1058 6.712C2.5988 4.763 6.1808 0.75 10.3628 0.75C14.5448 0.75 18.1268 4.763 19.6198 6.712V6.712Z"
-                  stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                  d="M10.3628 10.75C12.0196 10.75 13.3628 9.40685 13.3628 7.75C13.3628 6.09315 12.0196 4.75 10.3628 4.75C8.70594 4.75 7.36279 6.09315 7.36279 7.75C7.36279 9.40685 8.70594 10.75 10.3628 10.75Z"
-                  stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-
-
-            </div>
-
-            <div
-              style="width: 240px; height: 41px; gap: 5px; background-color: black; border-radius: 5px; position: absolute; z-index: 10; bottom: 0px; color: white;display: flex; justify-content: center;align-items: center; cursor: pointer;">
-              <!-- icon cart -->
-              <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                  d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M3 5H7L10 22H26" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path
-                  d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              <p>Add To Cart</p>
-            </div>
-          </div>
-          <div>
-            <p>Gucci duffle bag</p>
-            <p style="color: #db4444; font-weight: 600;">$960 <s style="color: rgb(165, 162, 162);">$1160</s></p>
-            <div style="display: flex; justify-content: start; align-items: center; gap: 10px;">
-              <div style="display: flex; justify-content: start; align-items: center;">
-                <svg id="HAVIT HV-G92 Gamepad" width="15px" height="30px" viewBox="0 0 130 130" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                  xmlns:serif="http://www.serif.com/"
-                  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                  <g transform="matrix(1,0,0,1,-634.728,-382.568)">
-                    <path id="path-star1"
-                      d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
-                      style="fill:#FFAD33;"></path>
-                  </g>
-                </svg>
-                <svg id="HAVIT HV-G92 Gamepad" width="15px" height="30px" viewBox="0 0 130 130" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                  xmlns:serif="http://www.serif.com/"
-                  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                  <g transform="matrix(1,0,0,1,-634.728,-382.568)">
-                    <path id="path-star1"
-                      d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
-                      style="fill:#FFAD33;"></path>
-                  </g>
-                </svg>
-                <svg id="HAVIT HV-G92 Gamepad" width="15px" height="30px" viewBox="0 0 130 130" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                  xmlns:serif="http://www.serif.com/"
-                  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                  <g transform="matrix(1,0,0,1,-634.728,-382.568)">
-                    <path id="path-star1"
-                      d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
-                      style="fill:#FFAD33;"></path>
-                  </g>
-                </svg>
-                <svg id="HAVIT HV-G92 Gamepad" width="15px" height="30px" viewBox="0 0 130 130" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                  xmlns:serif="http://www.serif.com/"
-                  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                  <g transform="matrix(1,0,0,1,-634.728,-382.568)">
-                    <path id="path-star1"
-                      d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
-                      style="fill:#FFAD33;"></path>
-                  </g>
-                </svg>
-                <svg id="HAVIT HV-G92 Gamepad" width="15px" height="30px" viewBox="0 0 130 130" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                  xmlns:serif="http://www.serif.com/"
-                  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                  <g transform="matrix(1,0,0,1,-634.728,-382.568)">
-                    <path id="path-star1"
-                      d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
-                      style="fill:#FFAD33;"></path>
-                  </g>
+              <div
+                style="
+                  position: absolute;
+                  z-index: 10;
+                  top: 10px;
+                  left: 10px;
+                  font-size: 14px;
+                  width: 55px;
+                  height: 26px;
+                  background-color: #db4444;
+                  color: white;
+                  border-radius: 5px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
+                -35%
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  z-index: 10;
+                  top: 10px;
+                  right: 10px;
+                  background-color: white;
+                  width: 34px;
+                  height: 34px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border-radius: 50%;
+                  cursor: pointer;
+                "
+              >
+                <svg
+                  width="18"
+                  height="20"
+                  viewBox="0 0 18 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.7798 3.35143H2.11312L3.44645 18.78H14.1131L15.4465 3.35143H0.779785M8.77979 7.20857V14.9229M12.1131 7.20857L11.4465 14.9229M5.44645 7.20857L6.11312 14.9229M6.11312 3.35143L6.77979 0.779999H10.7798L11.4465 3.35143"
+                    stroke="black"
+                    stroke-width="1.56"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </div>
-              <div style="color: rgb(125, 129, 132);">(65)</div>
+
+              <div
+                style="
+                  width: 240px;
+                  height: 41px;
+                  gap: 5px;
+                  background-color: black;
+                  border-radius: 5px;
+                  position: absolute;
+                  z-index: 10;
+                  bottom: 0px;
+                  color: white;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  cursor: pointer;
+                "
+              >
+                <!-- icon cart -->
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M3 5H7L10 22H26"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p>Add To Cart</p>
+              </div>
+            </div>
+            <div>
+              <p>Gucci duffle bag</p>
+              <p style="color: #db4444; font-weight: 600">
+                $960 <s style="color: rgb(165, 162, 162)">$1160</s>
+              </p>
             </div>
           </div>
-        </div>
-        <!--  -->
+          <!--  -->
 
-        <div class="productCard" style="width: 240px;height: 322px; ">
-          <div class="productimg"
-            style="background-color: #F5F5F5; border-radius: 5px; width: 240px; height: 250px; position: relative; display: flex; justify-content: center;align-items: center;">
-            <!-- img -->
-            <img src="../Asset/gammaxx-l240-argb-1-500x500 1.png" alt="bag">
+          <div class="productCard" style="width: 240px; height: 322px">
+            <div
+              class="productimg"
+              style="
+                background-color: #f5f5f5;
+                border-radius: 5px;
+                width: 240px;
+                height: 250px;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <!-- img -->
+              <img src="../Asset/gammaxx-l240-argb-1-500x500 1.png" alt="bag" />
 
-            <div
-              style="position: absolute; z-index: 10; top: 10px; left: 10px; font-size: 14px; width: 55px; height: 26px; background-color: #db4444; color: white; border-radius: 5px; display: none; justify-content: center; align-items: center;">
-              -35%
-            </div>
-            <div
-              style="position: absolute; z-index: 10; top: 10px; right: 10px;  background-color: white; width: 34px;height: 34px; display: flex; justify-content: center;align-items: center;border-radius: 50%; cursor: pointer;">
-              <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M19.6198 6.712C20.0938 7.332 20.0938 8.169 19.6198 8.788C18.1268 10.737 14.5448 14.75 10.3628 14.75C6.1808 14.75 2.5988 10.737 1.1058 8.788C0.875187 8.49113 0.75 8.12592 0.75 7.75C0.75 7.37408 0.875187 7.00887 1.1058 6.712C2.5988 4.763 6.1808 0.75 10.3628 0.75C14.5448 0.75 18.1268 4.763 19.6198 6.712V6.712Z"
-                  stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                  d="M10.3628 10.75C12.0196 10.75 13.3628 9.40685 13.3628 7.75C13.3628 6.09315 12.0196 4.75 10.3628 4.75C8.70594 4.75 7.36279 6.09315 7.36279 7.75C7.36279 9.40685 8.70594 10.75 10.3628 10.75Z"
-                  stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-
-            </div>
-            <div
-              style="width: 240px; height: 41px; gap: 5px; background-color: black; border-radius: 5px; position: absolute; z-index: 10; bottom: 0px; color: white;display: flex; justify-content: center;align-items: center; cursor: pointer;">
-              <!-- icon cart -->
-              <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                  d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M3 5H7L10 22H26" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path
-                  d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              <p>Add To Cart</p>
-            </div>
-          </div>
-          <div>
-            <p>RGB liquid CPU Cooler</p>
-            <p style="color: #db4444; font-weight: 600;">$1960</p>
-            <div style="display: flex; justify-content: start; align-items: center; gap: 10px;">
-              <div style="display: flex; justify-content: start; align-items: center;">
-                <svg id="HAVIT HV-G92 Gamepad" width="15px" height="30px" viewBox="0 0 130 130" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                  xmlns:serif="http://www.serif.com/"
-                  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                  <g transform="matrix(1,0,0,1,-634.728,-382.568)">
-                    <path id="path-star1"
-                      d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
-                      style="fill:#FFAD33;"></path>
-                  </g>
-                </svg>
-                <svg id="HAVIT HV-G92 Gamepad" width="15px" height="30px" viewBox="0 0 130 130" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                  xmlns:serif="http://www.serif.com/"
-                  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                  <g transform="matrix(1,0,0,1,-634.728,-382.568)">
-                    <path id="path-star1"
-                      d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
-                      style="fill:#FFAD33;"></path>
-                  </g>
-                </svg>
-                <svg id="HAVIT HV-G92 Gamepad" width="15px" height="30px" viewBox="0 0 130 130" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                  xmlns:serif="http://www.serif.com/"
-                  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                  <g transform="matrix(1,0,0,1,-634.728,-382.568)">
-                    <path id="path-star1"
-                      d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
-                      style="fill:#FFAD33;"></path>
-                  </g>
-                </svg>
-                <svg id="HAVIT HV-G92 Gamepad" width="15px" height="30px" viewBox="0 0 130 130" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                  xmlns:serif="http://www.serif.com/"
-                  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                  <g transform="matrix(1,0,0,1,-634.728,-382.568)">
-                    <path id="path-star1"
-                      d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
-                      style="fill:#FFAD33;"></path>
-                  </g>
-                </svg>
-                <svg id="HAVIT HV-G92 Gamepad" width="15px" height="30px" viewBox="0 0 130 130" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                  xmlns:serif="http://www.serif.com/"
-                  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                  <g transform="matrix(1,0,0,1,-634.728,-382.568)">
-                    <path id="path-star1"
-                      d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
-                      style="fill:#FFAD33;"></path>
-                  </g>
+              <div
+                style="
+                  position: absolute;
+                  z-index: 10;
+                  top: 10px;
+                  left: 10px;
+                  font-size: 14px;
+                  width: 55px;
+                  height: 26px;
+                  background-color: #db4444;
+                  color: white;
+                  border-radius: 5px;
+                  display: none;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
+                -35%
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  z-index: 10;
+                  top: 10px;
+                  right: 10px;
+                  background-color: white;
+                  width: 34px;
+                  height: 34px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border-radius: 50%;
+                  cursor: pointer;
+                "
+              >
+                <svg
+                  width="18"
+                  height="20"
+                  viewBox="0 0 18 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.7798 3.35143H2.11312L3.44645 18.78H14.1131L15.4465 3.35143H0.779785M8.77979 7.20857V14.9229M12.1131 7.20857L11.4465 14.9229M5.44645 7.20857L6.11312 14.9229M6.11312 3.35143L6.77979 0.779999H10.7798L11.4465 3.35143"
+                    stroke="black"
+                    stroke-width="1.56"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </div>
-              <div style="color: rgb(125, 129, 132);">(65)</div>
-            </div>
-          </div>
-        </div>
-        <div class="productCard" style="width: 240px;height: 322px; ">
-          <div class="productimg"
-            style="background-color: #F5F5F5; border-radius: 5px; width: 240px; height: 250px; position: relative; display: flex; justify-content: center;align-items: center;">
-            <!-- img -->
-            <img style="width: 150px;" src="../Asset/GP11_PRD3 1.png" alt="bag">
-
-            <div
-              style=" position: absolute; z-index: 10; top: 10px; left: 10px;  font-size: 14px; width: 55px; height: 26px; background-color: #00FF66;color: white; border-radius: 5px; display: flex; justify-content: center; align-items: center;">
-              NEW</div>
-            <div
-              style=" position: absolute; z-index: 10; top: 10px; right: 10px; background-color: white; width: 34px;height: 34px; display: flex; justify-content: center;align-items: center;border-radius: 50%; cursor: pointer;">
-              <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M19.6198 6.712C20.0938 7.332 20.0938 8.169 19.6198 8.788C18.1268 10.737 14.5448 14.75 10.3628 14.75C6.1808 14.75 2.5988 10.737 1.1058 8.788C0.875187 8.49113 0.75 8.12592 0.75 7.75C0.75 7.37408 0.875187 7.00887 1.1058 6.712C2.5988 4.763 6.1808 0.75 10.3628 0.75C14.5448 0.75 18.1268 4.763 19.6198 6.712V6.712Z"
-                  stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                  d="M10.3628 10.75C12.0196 10.75 13.3628 9.40685 13.3628 7.75C13.3628 6.09315 12.0196 4.75 10.3628 4.75C8.70594 4.75 7.36279 6.09315 7.36279 7.75C7.36279 9.40685 8.70594 10.75 10.3628 10.75Z"
-                  stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-
-            </div>
-            <div
-              style="width: 240px; height: 41px; gap: 5px; background-color: black; border-radius: 5px; position: absolute; z-index: 10; bottom: 0px; color: white;display: flex; justify-content: center;align-items: center; cursor: pointer;">
-              <!-- icon cart -->
-              <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                  d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M3 5H7L10 22H26" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path
-                  d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              <p>Add To Cart</p>
-            </div>
-          </div>
-          <div>
-            <p>GP11 Shooter USB Gamepad</p>
-            <p style="color: #db4444; font-weight: 600;">$550</p>
-            <div style="display: flex; justify-content: start; align-items: center; gap: 10px;">
-              <div style="display: flex; justify-content: start; align-items: center;">
-                <svg id="HAVIT HV-G92 Gamepad" width="15px" height="30px" viewBox="0 0 130 130" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                  xmlns:serif="http://www.serif.com/"
-                  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                  <g transform="matrix(1,0,0,1,-634.728,-382.568)">
-                    <path id="path-star1"
-                      d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
-                      style="fill:#FFAD33;"></path>
-                  </g>
+              <div
+                style="
+                  width: 240px;
+                  height: 41px;
+                  gap: 5px;
+                  background-color: black;
+                  border-radius: 5px;
+                  position: absolute;
+                  z-index: 10;
+                  bottom: 0px;
+                  color: white;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  cursor: pointer;
+                "
+              >
+                <!-- icon cart -->
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M3 5H7L10 22H26"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
-                <svg id="HAVIT HV-G92 Gamepad" width="15px" height="30px" viewBox="0 0 130 130" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                  xmlns:serif="http://www.serif.com/"
-                  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                  <g transform="matrix(1,0,0,1,-634.728,-382.568)">
-                    <path id="path-star1"
-                      d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
-                      style="fill:#FFAD33;"></path>
-                  </g>
-                </svg>
-                <svg id="HAVIT HV-G92 Gamepad" width="15px" height="30px" viewBox="0 0 130 130" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                  xmlns:serif="http://www.serif.com/"
-                  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                  <g transform="matrix(1,0,0,1,-634.728,-382.568)">
-                    <path id="path-star1"
-                      d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
-                      style="fill:#FFAD33;"></path>
-                  </g>
-                </svg>
-                <svg id="HAVIT HV-G92 Gamepad" width="15px" height="30px" viewBox="0 0 130 130" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                  xmlns:serif="http://www.serif.com/"
-                  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                  <g transform="matrix(1,0,0,1,-634.728,-382.568)">
-                    <path id="path-star1"
-                      d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
-                      style="fill:#FFAD33;"></path>
-                  </g>
-                </svg>
-                <svg id="HAVIT HV-G92 Gamepad" width="15px" height="30px" viewBox="0 0 130 130" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                  xmlns:serif="http://www.serif.com/"
-                  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                  <g transform="matrix(1,0,0,1,-634.728,-382.568)">
-                    <path id="path-star1"
-                      d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
-                      style="fill:#FFAD33;"></path>
-                  </g>
-                </svg>
+                <p>Add To Cart</p>
               </div>
-              <div style="color: rgb(125, 129, 132);">(65)</div>
+            </div>
+            <div>
+              <p>RGB liquid CPU Cooler</p>
+              <p style="color: #db4444; font-weight: 600">$1960</p>
             </div>
           </div>
-        </div>
-        <div class="productCard" style="width: 240px;height: 322px; ">
-          <div class="productimg"
-            style="background-color: #F5F5F5; border-radius: 5px; width: 240px; height: 250px; position: relative; display: flex; justify-content: center;align-items: center;">
-            <!-- img -->
-            <img width="150px" src="../Asset/satin-jacket.png" alt="bag">
-
+          <div class="productCard" style="width: 240px; height: 322px">
             <div
-              style="position: absolute; z-index: 10; top: 10px; left: 10px; font-size: 14px; width: 55px; height: 26px; background-color: #db4444;color: white; border-radius: 5px; display: none; justify-content: center; align-items: center;">
-              -35%</div>
-            <div
-              style="position: absolute; z-index: 10; top: 10px;right: 10px; background-color: white; width: 34px;height: 34px; display: flex; justify-content: center;align-items: center;border-radius: 50%; cursor: pointer;">
-              <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M19.6198 6.712C20.0938 7.332 20.0938 8.169 19.6198 8.788C18.1268 10.737 14.5448 14.75 10.3628 14.75C6.1808 14.75 2.5988 10.737 1.1058 8.788C0.875187 8.49113 0.75 8.12592 0.75 7.75C0.75 7.37408 0.875187 7.00887 1.1058 6.712C2.5988 4.763 6.1808 0.75 10.3628 0.75C14.5448 0.75 18.1268 4.763 19.6198 6.712V6.712Z"
-                  stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                  d="M10.3628 10.75C12.0196 10.75 13.3628 9.40685 13.3628 7.75C13.3628 6.09315 12.0196 4.75 10.3628 4.75C8.70594 4.75 7.36279 6.09315 7.36279 7.75C7.36279 9.40685 8.70594 10.75 10.3628 10.75Z"
-                  stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-
-
-            </div>
-            <div
-              style="width: 240px; height: 41px; gap: 5px; background-color: black; border-radius: 5px; position: absolute; z-index: 10; bottom: 0px; color: white;display: flex; justify-content: center;align-items: center; cursor: pointer;">
-              <!-- icon cart -->
-              <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                  d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M3 5H7L10 22H26" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path
-                  d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
-                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              <p>Add To Cart</p>
-            </div>
-          </div>
-          <div>
-            <p>Quilted Satin Jacket</p>
-            <p style="color: #db4444; font-weight: 600;">$750</p>
-            <div style="display: flex; justify-content: start; align-items: center; gap: 10px;">
-              <div style="display: flex; justify-content: start; align-items: center;">
-                <svg id="HAVIT HV-G92 Gamepad" width="15px" height="30px" viewBox="0 0 130 130" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                  xmlns:serif="http://www.serif.com/"
-                  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                  <g transform="matrix(1,0,0,1,-634.728,-382.568)">
-                    <path id="path-star1"
-                      d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
-                      style="fill:#FFAD33;"></path>
-                  </g>
-                </svg>
-                <svg id="HAVIT HV-G92 Gamepad" width="15px" height="30px" viewBox="0 0 130 130" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                  xmlns:serif="http://www.serif.com/"
-                  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                  <g transform="matrix(1,0,0,1,-634.728,-382.568)">
-                    <path id="path-star1"
-                      d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
-                      style="fill:#FFAD33;"></path>
-                  </g>
-                </svg>
-                <svg id="HAVIT HV-G92 Gamepad" width="15px" height="30px" viewBox="0 0 130 130" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                  xmlns:serif="http://www.serif.com/"
-                  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                  <g transform="matrix(1,0,0,1,-634.728,-382.568)">
-                    <path id="path-star1"
-                      d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
-                      style="fill:#FFAD33;"></path>
-                  </g>
-                </svg>
-                <svg id="HAVIT HV-G92 Gamepad" width="15px" height="30px" viewBox="0 0 130 130" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                  xmlns:serif="http://www.serif.com/"
-                  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                  <g transform="matrix(1,0,0,1,-634.728,-382.568)">
-                    <path id="path-star1"
-                      d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
-                      style="fill:#FFAD33;"></path>
-                  </g>
-                </svg>
-                <svg id="HAVIT HV-G92 Gamepad" width="15px" height="30px" viewBox="0 0 130 130" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                  xmlns:serif="http://www.serif.com/"
-                  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                  <g transform="matrix(1,0,0,1,-634.728,-382.568)">
-                    <path id="path-star1"
-                      d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
-                      style="fill:#FFAD33;"></path>
-                  </g>
-                </svg>
-              </div>
-              <div style="color: rgb(125, 129, 132);">(65)</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-  <button id="backToTop" title="กลับไปด้านบน">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 20V4M5 11L12 4L19 11" stroke="black" stroke-width="2" stroke-linecap="round"
-        stroke-linejoin="round" />
-    </svg>
-  </button>
-
-  <footer class="bottom-menu">
-    <div class="footer-container">
-      <div class="box">
-        <strong style="font-size: 24px;">Exclusive</strong>
-        <div style="font-size: 20px;">Subscribe</div>
-        <div style="font-size: 16px;" class="text-desc">Get 10% off your first order</div>
-        <input type="text" placeholder="Enter your email" />
-      </div>
-      <div class="box">
-        <strong style="font-size: 18px;">Support</strong>
-        <div style="font-size: 16px;" class="text-desc">111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</div>
-        <div style="font-size: 16px;" class="text-desc">exclusive@gmail.com</div>
-        <div style="font-size: 16px;" class="text-desc">+88015-88888-9999</div>
-      </div>
-      <div class="box">
-        <strong style="font-size: 18px;">Account</strong>
-        <div style="font-size: 16px;" class="text-desc">My Account</div>
-        <div style="font-size: 16px;" class="text-desc">Login / Register</div>
-        <div style="font-size: 16px;" class="text-desc">Cart</div>
-        <div style="font-size: 16px;" class="text-desc">Wishlist</div>
-        <div style="font-size: 16px;" class="text-desc">Shop</div>
-      </div>
-      <div class="box">
-        <strong style="font-size: 18px;">Quick link</strong>
-        <div style="font-size: 16px;" class="text-desc">Privacy Policy</div>
-        <div style="font-size: 16px;" class="text-desc">Terms Of Use</div>
-        <div style="font-size: 16px;" class="text-desc">FAQ</div>
-        <div style="font-size: 16px;" class="text-desc">Contact</div>
-      </div>
-      <div class="box">
-        <strong style="font-size: 20px;">Download App</strong>
-        <div style="font-size: 12px; color: lightgray;">Save $3 with App New User Only</div>
-        <div>
-          <div class="img-app">
-            <img src="../Asset/Qr Code.png" alt="Download App" style="width: 80px; height: 80px;">
-            <div class="img-storeapp">
+              class="productimg"
+              style="
+                background-color: #f5f5f5;
+                border-radius: 5px;
+                width: 240px;
+                height: 250px;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <!-- img -->
               <img
-                src="../Asset/png-transparent-google-play-store-logo-google-play-app-store-android-wallets-text-label-logo.png"
-                alt="Google Play Store">
-              <img src="../Asset/download-appstore.png" alt="App Store">
+                style="width: 150px"
+                src="../Asset/GP11_PRD3 1.png"
+                alt="bag"
+              />
+
+              <div
+                style="
+                  position: absolute;
+                  z-index: 10;
+                  top: 10px;
+                  left: 10px;
+                  font-size: 14px;
+                  width: 55px;
+                  height: 26px;
+                  background-color: #db4444;
+                  color: white;
+                  border-radius: 5px;
+                  display: none;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
+                -35%
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  z-index: 10;
+                  top: 10px;
+                  right: 10px;
+                  background-color: white;
+                  width: 34px;
+                  height: 34px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border-radius: 50%;
+                  cursor: pointer;
+                "
+              >
+                <svg
+                  width="18"
+                  height="20"
+                  viewBox="0 0 18 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.7798 3.35143H2.11312L3.44645 18.78H14.1131L15.4465 3.35143H0.779785M8.77979 7.20857V14.9229M12.1131 7.20857L11.4465 14.9229M5.44645 7.20857L6.11312 14.9229M6.11312 3.35143L6.77979 0.779999H10.7798L11.4465 3.35143"
+                    stroke="black"
+                    stroke-width="1.56"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div
+                style="
+                  width: 240px;
+                  height: 41px;
+                  gap: 5px;
+                  background-color: black;
+                  border-radius: 5px;
+                  position: absolute;
+                  z-index: 10;
+                  bottom: 0px;
+                  color: white;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  cursor: pointer;
+                "
+              >
+                <!-- icon cart -->
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M3 5H7L10 22H26"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p>Add To Cart</p>
+              </div>
+            </div>
+            <div>
+              <p>GP11 Shooter USB Gamepad</p>
+              <p style="color: #db4444; font-weight: 600">$550</p>
+            </div>
+          </div>
+          <div class="productCard" style="width: 240px; height: 322px">
+            <div
+              class="productimg"
+              style="
+                background-color: #f5f5f5;
+                border-radius: 5px;
+                width: 240px;
+                height: 250px;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <!-- img -->
+              <img width="150px" src="../Asset/satin-jacket.png" alt="bag" />
+
+              <div
+                style="
+                  position: absolute;
+                  z-index: 10;
+                  top: 10px;
+                  left: 10px;
+                  font-size: 14px;
+                  width: 55px;
+                  height: 26px;
+                  background-color: #db4444;
+                  color: white;
+                  border-radius: 5px;
+                  display: none;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
+                -35%
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  z-index: 10;
+                  top: 10px;
+                  right: 10px;
+                  background-color: white;
+                  width: 34px;
+                  height: 34px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border-radius: 50%;
+                  cursor: pointer;
+                "
+              >
+                <svg
+                  width="18"
+                  height="20"
+                  viewBox="0 0 18 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.7798 3.35143H2.11312L3.44645 18.78H14.1131L15.4465 3.35143H0.779785M8.77979 7.20857V14.9229M12.1131 7.20857L11.4465 14.9229M5.44645 7.20857L6.11312 14.9229M6.11312 3.35143L6.77979 0.779999H10.7798L11.4465 3.35143"
+                    stroke="black"
+                    stroke-width="1.56"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div
+                style="
+                  width: 240px;
+                  height: 41px;
+                  gap: 5px;
+                  background-color: black;
+                  border-radius: 5px;
+                  position: absolute;
+                  z-index: 10;
+                  bottom: 0px;
+                  color: white;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  cursor: pointer;
+                "
+              >
+                <!-- icon cart -->
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M3 5H7L10 22H26"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p>Add To Cart</p>
+              </div>
+            </div>
+            <div>
+              <p>Quilted Satin Jacket</p>
+              <p style="color: #db4444; font-weight: 600">$750</p>
             </div>
           </div>
         </div>
-        <div class="img-social">
-          <img src="../Asset/Icon-Facebook.png" alt="Facebook">
-          <img src="../Asset/Icon-Twitter.png" alt="Twitter">
-          <img src="../Asset/icon-instagram.png" alt="Instagram">
-          <img src="../Asset/Icon-Linkedin.png" alt="LinkedIn">
+      </div>
+      <div class="justForyou">
+        <div
+          class="headmenu"
+          style="
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 60px;
+          "
+        >
+          <div style="display: flex; align-items: center; gap: 10px">
+            <div
+              style="
+                background-color: #db4444;
+                width: 20px;
+                height: 40px;
+                border-radius: 5px;
+              "
+            ></div>
+            <p style="font-weight: 400; font-size: 20px">Just For You</p>
+          </div>
+          <div
+            style="
+              background-color: white;
+              border: 1px solid black;
+              width: 150px;
+              height: 56px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 5px;
+              font-weight: 600;
+              cursor: pointer;
+            "
+          >
+            See All
+          </div>
+        </div>
+        <div
+          class="productmenu"
+          style="display: flex; flex-direction: row; gap: 30px"
+        >
+          <div class="productCard" style="width: 240px; height: 322px">
+            <div
+              class="productimg"
+              style="
+                background-color: #f5f5f5;
+                border-radius: 5px;
+                width: 240px;
+                height: 250px;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <!-- img -->
+              <img src="../Asset/Productbag.png" alt="bag" />
+
+              <div
+                style="
+                  position: absolute;
+                  z-index: 10;
+                  top: 10px;
+                  left: 10px;
+                  font-size: 14px;
+                  width: 55px;
+                  height: 26px;
+                  background-color: #db4444;
+                  color: white;
+                  border-radius: 5px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
+                -35%
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  z-index: 10;
+                  top: 10px;
+                  right: 10px;
+                  background-color: white;
+                  width: 34px;
+                  height: 34px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border-radius: 50%;
+                  cursor: pointer;
+                "
+              >
+                <svg
+                  width="21"
+                  height="16"
+                  viewBox="0 0 21 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.6198 6.712C20.0938 7.332 20.0938 8.169 19.6198 8.788C18.1268 10.737 14.5448 14.75 10.3628 14.75C6.1808 14.75 2.5988 10.737 1.1058 8.788C0.875187 8.49113 0.75 8.12592 0.75 7.75C0.75 7.37408 0.875187 7.00887 1.1058 6.712C2.5988 4.763 6.1808 0.75 10.3628 0.75C14.5448 0.75 18.1268 4.763 19.6198 6.712V6.712Z"
+                    stroke="black"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M10.3628 10.75C12.0196 10.75 13.3628 9.40685 13.3628 7.75C13.3628 6.09315 12.0196 4.75 10.3628 4.75C8.70594 4.75 7.36279 6.09315 7.36279 7.75C7.36279 9.40685 8.70594 10.75 10.3628 10.75Z"
+                    stroke="black"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+
+              <div
+                style="
+                  width: 240px;
+                  height: 41px;
+                  gap: 5px;
+                  background-color: black;
+                  border-radius: 5px;
+                  position: absolute;
+                  z-index: 10;
+                  bottom: 0px;
+                  color: white;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  cursor: pointer;
+                "
+              >
+                <!-- icon cart -->
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M3 5H7L10 22H26"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p>Add To Cart</p>
+              </div>
+            </div>
+            <div>
+              <p>Gucci duffle bag</p>
+              <p style="color: #db4444; font-weight: 600">
+                $960 <s style="color: rgb(165, 162, 162)">$1160</s>
+              </p>
+              <div
+                style="
+                  display: flex;
+                  justify-content: start;
+                  align-items: center;
+                  gap: 10px;
+                "
+              >
+                <div
+                  style="
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                  "
+                >
+                  <svg
+                    id="HAVIT HV-G92 Gamepad"
+                    width="15px"
+                    height="30px"
+                    viewBox="0 0 130 130"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xml:space="preserve"
+                    xmlns:serif="http://www.serif.com/"
+                    style="
+                      fill-rule: evenodd;
+                      clip-rule: evenodd;
+                      stroke-linejoin: round;
+                      stroke-miterlimit: 2;
+                    "
+                  >
+                    <g transform="matrix(1,0,0,1,-634.728,-382.568)">
+                      <path
+                        id="path-star1"
+                        d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
+                        style="fill: #ffad33"
+                      ></path>
+                    </g>
+                  </svg>
+                  <svg
+                    id="HAVIT HV-G92 Gamepad"
+                    width="15px"
+                    height="30px"
+                    viewBox="0 0 130 130"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xml:space="preserve"
+                    xmlns:serif="http://www.serif.com/"
+                    style="
+                      fill-rule: evenodd;
+                      clip-rule: evenodd;
+                      stroke-linejoin: round;
+                      stroke-miterlimit: 2;
+                    "
+                  >
+                    <g transform="matrix(1,0,0,1,-634.728,-382.568)">
+                      <path
+                        id="path-star1"
+                        d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
+                        style="fill: #ffad33"
+                      ></path>
+                    </g>
+                  </svg>
+                  <svg
+                    id="HAVIT HV-G92 Gamepad"
+                    width="15px"
+                    height="30px"
+                    viewBox="0 0 130 130"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xml:space="preserve"
+                    xmlns:serif="http://www.serif.com/"
+                    style="
+                      fill-rule: evenodd;
+                      clip-rule: evenodd;
+                      stroke-linejoin: round;
+                      stroke-miterlimit: 2;
+                    "
+                  >
+                    <g transform="matrix(1,0,0,1,-634.728,-382.568)">
+                      <path
+                        id="path-star1"
+                        d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
+                        style="fill: #ffad33"
+                      ></path>
+                    </g>
+                  </svg>
+                  <svg
+                    id="HAVIT HV-G92 Gamepad"
+                    width="15px"
+                    height="30px"
+                    viewBox="0 0 130 130"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xml:space="preserve"
+                    xmlns:serif="http://www.serif.com/"
+                    style="
+                      fill-rule: evenodd;
+                      clip-rule: evenodd;
+                      stroke-linejoin: round;
+                      stroke-miterlimit: 2;
+                    "
+                  >
+                    <g transform="matrix(1,0,0,1,-634.728,-382.568)">
+                      <path
+                        id="path-star1"
+                        d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
+                        style="fill: #ffad33"
+                      ></path>
+                    </g>
+                  </svg>
+                  <svg
+                    id="HAVIT HV-G92 Gamepad"
+                    width="15px"
+                    height="30px"
+                    viewBox="0 0 130 130"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xml:space="preserve"
+                    xmlns:serif="http://www.serif.com/"
+                    style="
+                      fill-rule: evenodd;
+                      clip-rule: evenodd;
+                      stroke-linejoin: round;
+                      stroke-miterlimit: 2;
+                    "
+                  >
+                    <g transform="matrix(1,0,0,1,-634.728,-382.568)">
+                      <path
+                        id="path-star1"
+                        d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
+                        style="fill: #ffad33"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <div style="color: rgb(125, 129, 132)">(65)</div>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+
+          <div class="productCard" style="width: 240px; height: 322px">
+            <div
+              class="productimg"
+              style="
+                background-color: #f5f5f5;
+                border-radius: 5px;
+                width: 240px;
+                height: 250px;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <!-- img -->
+              <img src="../Asset/gammaxx-l240-argb-1-500x500 1.png" alt="bag" />
+
+              <div
+                style="
+                  position: absolute;
+                  z-index: 10;
+                  top: 10px;
+                  left: 10px;
+                  font-size: 14px;
+                  width: 55px;
+                  height: 26px;
+                  background-color: #db4444;
+                  color: white;
+                  border-radius: 5px;
+                  display: none;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
+                -35%
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  z-index: 10;
+                  top: 10px;
+                  right: 10px;
+                  background-color: white;
+                  width: 34px;
+                  height: 34px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border-radius: 50%;
+                  cursor: pointer;
+                "
+              >
+                <svg
+                  width="21"
+                  height="16"
+                  viewBox="0 0 21 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.6198 6.712C20.0938 7.332 20.0938 8.169 19.6198 8.788C18.1268 10.737 14.5448 14.75 10.3628 14.75C6.1808 14.75 2.5988 10.737 1.1058 8.788C0.875187 8.49113 0.75 8.12592 0.75 7.75C0.75 7.37408 0.875187 7.00887 1.1058 6.712C2.5988 4.763 6.1808 0.75 10.3628 0.75C14.5448 0.75 18.1268 4.763 19.6198 6.712V6.712Z"
+                    stroke="black"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M10.3628 10.75C12.0196 10.75 13.3628 9.40685 13.3628 7.75C13.3628 6.09315 12.0196 4.75 10.3628 4.75C8.70594 4.75 7.36279 6.09315 7.36279 7.75C7.36279 9.40685 8.70594 10.75 10.3628 10.75Z"
+                    stroke="black"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div
+                style="
+                  width: 240px;
+                  height: 41px;
+                  gap: 5px;
+                  background-color: black;
+                  border-radius: 5px;
+                  position: absolute;
+                  z-index: 10;
+                  bottom: 0px;
+                  color: white;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  cursor: pointer;
+                "
+              >
+                <!-- icon cart -->
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M3 5H7L10 22H26"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p>Add To Cart</p>
+              </div>
+            </div>
+            <div>
+              <p>RGB liquid CPU Cooler</p>
+              <p style="color: #db4444; font-weight: 600">$1960</p>
+              <div
+                style="
+                  display: flex;
+                  justify-content: start;
+                  align-items: center;
+                  gap: 10px;
+                "
+              >
+                <div
+                  style="
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                  "
+                >
+                  <svg
+                    id="HAVIT HV-G92 Gamepad"
+                    width="15px"
+                    height="30px"
+                    viewBox="0 0 130 130"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xml:space="preserve"
+                    xmlns:serif="http://www.serif.com/"
+                    style="
+                      fill-rule: evenodd;
+                      clip-rule: evenodd;
+                      stroke-linejoin: round;
+                      stroke-miterlimit: 2;
+                    "
+                  >
+                    <g transform="matrix(1,0,0,1,-634.728,-382.568)">
+                      <path
+                        id="path-star1"
+                        d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
+                        style="fill: #ffad33"
+                      ></path>
+                    </g>
+                  </svg>
+                  <svg
+                    id="HAVIT HV-G92 Gamepad"
+                    width="15px"
+                    height="30px"
+                    viewBox="0 0 130 130"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xml:space="preserve"
+                    xmlns:serif="http://www.serif.com/"
+                    style="
+                      fill-rule: evenodd;
+                      clip-rule: evenodd;
+                      stroke-linejoin: round;
+                      stroke-miterlimit: 2;
+                    "
+                  >
+                    <g transform="matrix(1,0,0,1,-634.728,-382.568)">
+                      <path
+                        id="path-star1"
+                        d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
+                        style="fill: #ffad33"
+                      ></path>
+                    </g>
+                  </svg>
+                  <svg
+                    id="HAVIT HV-G92 Gamepad"
+                    width="15px"
+                    height="30px"
+                    viewBox="0 0 130 130"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xml:space="preserve"
+                    xmlns:serif="http://www.serif.com/"
+                    style="
+                      fill-rule: evenodd;
+                      clip-rule: evenodd;
+                      stroke-linejoin: round;
+                      stroke-miterlimit: 2;
+                    "
+                  >
+                    <g transform="matrix(1,0,0,1,-634.728,-382.568)">
+                      <path
+                        id="path-star1"
+                        d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
+                        style="fill: #ffad33"
+                      ></path>
+                    </g>
+                  </svg>
+                  <svg
+                    id="HAVIT HV-G92 Gamepad"
+                    width="15px"
+                    height="30px"
+                    viewBox="0 0 130 130"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xml:space="preserve"
+                    xmlns:serif="http://www.serif.com/"
+                    style="
+                      fill-rule: evenodd;
+                      clip-rule: evenodd;
+                      stroke-linejoin: round;
+                      stroke-miterlimit: 2;
+                    "
+                  >
+                    <g transform="matrix(1,0,0,1,-634.728,-382.568)">
+                      <path
+                        id="path-star1"
+                        d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
+                        style="fill: #ffad33"
+                      ></path>
+                    </g>
+                  </svg>
+                  <svg
+                    id="HAVIT HV-G92 Gamepad"
+                    width="15px"
+                    height="30px"
+                    viewBox="0 0 130 130"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xml:space="preserve"
+                    xmlns:serif="http://www.serif.com/"
+                    style="
+                      fill-rule: evenodd;
+                      clip-rule: evenodd;
+                      stroke-linejoin: round;
+                      stroke-miterlimit: 2;
+                    "
+                  >
+                    <g transform="matrix(1,0,0,1,-634.728,-382.568)">
+                      <path
+                        id="path-star1"
+                        d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
+                        style="fill: #ffad33"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <div style="color: rgb(125, 129, 132)">(65)</div>
+              </div>
+            </div>
+          </div>
+          <div class="productCard" style="width: 240px; height: 322px">
+            <div
+              class="productimg"
+              style="
+                background-color: #f5f5f5;
+                border-radius: 5px;
+                width: 240px;
+                height: 250px;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <!-- img -->
+              <img
+                style="width: 150px"
+                src="../Asset/GP11_PRD3 1.png"
+                alt="bag"
+              />
+
+              <div
+                style="
+                  position: absolute;
+                  z-index: 10;
+                  top: 10px;
+                  left: 10px;
+                  font-size: 14px;
+                  width: 55px;
+                  height: 26px;
+                  background-color: #00ff66;
+                  color: white;
+                  border-radius: 5px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
+                NEW
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  z-index: 10;
+                  top: 10px;
+                  right: 10px;
+                  background-color: white;
+                  width: 34px;
+                  height: 34px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border-radius: 50%;
+                  cursor: pointer;
+                "
+              >
+                <svg
+                  width="21"
+                  height="16"
+                  viewBox="0 0 21 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.6198 6.712C20.0938 7.332 20.0938 8.169 19.6198 8.788C18.1268 10.737 14.5448 14.75 10.3628 14.75C6.1808 14.75 2.5988 10.737 1.1058 8.788C0.875187 8.49113 0.75 8.12592 0.75 7.75C0.75 7.37408 0.875187 7.00887 1.1058 6.712C2.5988 4.763 6.1808 0.75 10.3628 0.75C14.5448 0.75 18.1268 4.763 19.6198 6.712V6.712Z"
+                    stroke="black"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M10.3628 10.75C12.0196 10.75 13.3628 9.40685 13.3628 7.75C13.3628 6.09315 12.0196 4.75 10.3628 4.75C8.70594 4.75 7.36279 6.09315 7.36279 7.75C7.36279 9.40685 8.70594 10.75 10.3628 10.75Z"
+                    stroke="black"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div
+                style="
+                  width: 240px;
+                  height: 41px;
+                  gap: 5px;
+                  background-color: black;
+                  border-radius: 5px;
+                  position: absolute;
+                  z-index: 10;
+                  bottom: 0px;
+                  color: white;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  cursor: pointer;
+                "
+              >
+                <!-- icon cart -->
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M3 5H7L10 22H26"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p>Add To Cart</p>
+              </div>
+            </div>
+            <div>
+              <p>GP11 Shooter USB Gamepad</p>
+              <p style="color: #db4444; font-weight: 600">$550</p>
+              <div
+                style="
+                  display: flex;
+                  justify-content: start;
+                  align-items: center;
+                  gap: 10px;
+                "
+              >
+                <div
+                  style="
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                  "
+                >
+                  <svg
+                    id="HAVIT HV-G92 Gamepad"
+                    width="15px"
+                    height="30px"
+                    viewBox="0 0 130 130"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xml:space="preserve"
+                    xmlns:serif="http://www.serif.com/"
+                    style="
+                      fill-rule: evenodd;
+                      clip-rule: evenodd;
+                      stroke-linejoin: round;
+                      stroke-miterlimit: 2;
+                    "
+                  >
+                    <g transform="matrix(1,0,0,1,-634.728,-382.568)">
+                      <path
+                        id="path-star1"
+                        d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
+                        style="fill: #ffad33"
+                      ></path>
+                    </g>
+                  </svg>
+                  <svg
+                    id="HAVIT HV-G92 Gamepad"
+                    width="15px"
+                    height="30px"
+                    viewBox="0 0 130 130"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xml:space="preserve"
+                    xmlns:serif="http://www.serif.com/"
+                    style="
+                      fill-rule: evenodd;
+                      clip-rule: evenodd;
+                      stroke-linejoin: round;
+                      stroke-miterlimit: 2;
+                    "
+                  >
+                    <g transform="matrix(1,0,0,1,-634.728,-382.568)">
+                      <path
+                        id="path-star1"
+                        d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
+                        style="fill: #ffad33"
+                      ></path>
+                    </g>
+                  </svg>
+                  <svg
+                    id="HAVIT HV-G92 Gamepad"
+                    width="15px"
+                    height="30px"
+                    viewBox="0 0 130 130"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xml:space="preserve"
+                    xmlns:serif="http://www.serif.com/"
+                    style="
+                      fill-rule: evenodd;
+                      clip-rule: evenodd;
+                      stroke-linejoin: round;
+                      stroke-miterlimit: 2;
+                    "
+                  >
+                    <g transform="matrix(1,0,0,1,-634.728,-382.568)">
+                      <path
+                        id="path-star1"
+                        d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
+                        style="fill: #ffad33"
+                      ></path>
+                    </g>
+                  </svg>
+                  <svg
+                    id="HAVIT HV-G92 Gamepad"
+                    width="15px"
+                    height="30px"
+                    viewBox="0 0 130 130"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xml:space="preserve"
+                    xmlns:serif="http://www.serif.com/"
+                    style="
+                      fill-rule: evenodd;
+                      clip-rule: evenodd;
+                      stroke-linejoin: round;
+                      stroke-miterlimit: 2;
+                    "
+                  >
+                    <g transform="matrix(1,0,0,1,-634.728,-382.568)">
+                      <path
+                        id="path-star1"
+                        d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
+                        style="fill: #ffad33"
+                      ></path>
+                    </g>
+                  </svg>
+                  <svg
+                    id="HAVIT HV-G92 Gamepad"
+                    width="15px"
+                    height="30px"
+                    viewBox="0 0 130 130"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xml:space="preserve"
+                    xmlns:serif="http://www.serif.com/"
+                    style="
+                      fill-rule: evenodd;
+                      clip-rule: evenodd;
+                      stroke-linejoin: round;
+                      stroke-miterlimit: 2;
+                    "
+                  >
+                    <g transform="matrix(1,0,0,1,-634.728,-382.568)">
+                      <path
+                        id="path-star1"
+                        d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
+                        style="fill: #ffad33"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <div style="color: rgb(125, 129, 132)">(65)</div>
+              </div>
+            </div>
+          </div>
+          <div class="productCard" style="width: 240px; height: 322px">
+            <div
+              class="productimg"
+              style="
+                background-color: #f5f5f5;
+                border-radius: 5px;
+                width: 240px;
+                height: 250px;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <!-- img -->
+              <img width="150px" src="../Asset/satin-jacket.png" alt="bag" />
+
+              <div
+                style="
+                  position: absolute;
+                  z-index: 10;
+                  top: 10px;
+                  left: 10px;
+                  font-size: 14px;
+                  width: 55px;
+                  height: 26px;
+                  background-color: #db4444;
+                  color: white;
+                  border-radius: 5px;
+                  display: none;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
+                -35%
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  z-index: 10;
+                  top: 10px;
+                  right: 10px;
+                  background-color: white;
+                  width: 34px;
+                  height: 34px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border-radius: 50%;
+                  cursor: pointer;
+                "
+              >
+                <svg
+                  width="21"
+                  height="16"
+                  viewBox="0 0 21 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.6198 6.712C20.0938 7.332 20.0938 8.169 19.6198 8.788C18.1268 10.737 14.5448 14.75 10.3628 14.75C6.1808 14.75 2.5988 10.737 1.1058 8.788C0.875187 8.49113 0.75 8.12592 0.75 7.75C0.75 7.37408 0.875187 7.00887 1.1058 6.712C2.5988 4.763 6.1808 0.75 10.3628 0.75C14.5448 0.75 18.1268 4.763 19.6198 6.712V6.712Z"
+                    stroke="black"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M10.3628 10.75C12.0196 10.75 13.3628 9.40685 13.3628 7.75C13.3628 6.09315 12.0196 4.75 10.3628 4.75C8.70594 4.75 7.36279 6.09315 7.36279 7.75C7.36279 9.40685 8.70594 10.75 10.3628 10.75Z"
+                    stroke="black"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div
+                style="
+                  width: 240px;
+                  height: 41px;
+                  gap: 5px;
+                  background-color: black;
+                  border-radius: 5px;
+                  position: absolute;
+                  z-index: 10;
+                  bottom: 0px;
+                  color: white;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  cursor: pointer;
+                "
+              >
+                <!-- icon cart -->
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M3 5H7L10 22H26"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p>Add To Cart</p>
+              </div>
+            </div>
+            <div>
+              <p>Quilted Satin Jacket</p>
+              <p style="color: #db4444; font-weight: 600">$750</p>
+              <div
+                style="
+                  display: flex;
+                  justify-content: start;
+                  align-items: center;
+                  gap: 10px;
+                "
+              >
+                <div
+                  style="
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                  "
+                >
+                  <svg
+                    id="HAVIT HV-G92 Gamepad"
+                    width="15px"
+                    height="30px"
+                    viewBox="0 0 130 130"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xml:space="preserve"
+                    xmlns:serif="http://www.serif.com/"
+                    style="
+                      fill-rule: evenodd;
+                      clip-rule: evenodd;
+                      stroke-linejoin: round;
+                      stroke-miterlimit: 2;
+                    "
+                  >
+                    <g transform="matrix(1,0,0,1,-634.728,-382.568)">
+                      <path
+                        id="path-star1"
+                        d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
+                        style="fill: #ffad33"
+                      ></path>
+                    </g>
+                  </svg>
+                  <svg
+                    id="HAVIT HV-G92 Gamepad"
+                    width="15px"
+                    height="30px"
+                    viewBox="0 0 130 130"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xml:space="preserve"
+                    xmlns:serif="http://www.serif.com/"
+                    style="
+                      fill-rule: evenodd;
+                      clip-rule: evenodd;
+                      stroke-linejoin: round;
+                      stroke-miterlimit: 2;
+                    "
+                  >
+                    <g transform="matrix(1,0,0,1,-634.728,-382.568)">
+                      <path
+                        id="path-star1"
+                        d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
+                        style="fill: #ffad33"
+                      ></path>
+                    </g>
+                  </svg>
+                  <svg
+                    id="HAVIT HV-G92 Gamepad"
+                    width="15px"
+                    height="30px"
+                    viewBox="0 0 130 130"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xml:space="preserve"
+                    xmlns:serif="http://www.serif.com/"
+                    style="
+                      fill-rule: evenodd;
+                      clip-rule: evenodd;
+                      stroke-linejoin: round;
+                      stroke-miterlimit: 2;
+                    "
+                  >
+                    <g transform="matrix(1,0,0,1,-634.728,-382.568)">
+                      <path
+                        id="path-star1"
+                        d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
+                        style="fill: #ffad33"
+                      ></path>
+                    </g>
+                  </svg>
+                  <svg
+                    id="HAVIT HV-G92 Gamepad"
+                    width="15px"
+                    height="30px"
+                    viewBox="0 0 130 130"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xml:space="preserve"
+                    xmlns:serif="http://www.serif.com/"
+                    style="
+                      fill-rule: evenodd;
+                      clip-rule: evenodd;
+                      stroke-linejoin: round;
+                      stroke-miterlimit: 2;
+                    "
+                  >
+                    <g transform="matrix(1,0,0,1,-634.728,-382.568)">
+                      <path
+                        id="path-star1"
+                        d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
+                        style="fill: #ffad33"
+                      ></path>
+                    </g>
+                  </svg>
+                  <svg
+                    id="HAVIT HV-G92 Gamepad"
+                    width="15px"
+                    height="30px"
+                    viewBox="0 0 130 130"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xml:space="preserve"
+                    xmlns:serif="http://www.serif.com/"
+                    style="
+                      fill-rule: evenodd;
+                      clip-rule: evenodd;
+                      stroke-linejoin: round;
+                      stroke-miterlimit: 2;
+                    "
+                  >
+                    <g transform="matrix(1,0,0,1,-634.728,-382.568)">
+                      <path
+                        id="path-star1"
+                        d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z"
+                        style="fill: #ffad33"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <div style="color: rgb(125, 129, 132)">(65)</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="copyright">
-      © Copyright Rimel 2022. All right reserved
-    </div>
-  </footer>
 
-  <script src="../E_Commerce_Scipt/WishlistPage.js"></script>
+    <button id="backToTop" title="กลับไปด้านบน">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 20V4M5 11L12 4L19 11"
+          stroke="black"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
 
-</body>
+    <footer class="bottom-menu">
+      <div class="footer-container">
+        <div class="box">
+          <strong style="font-size: 24px">Exclusive</strong>
+          <div style="font-size: 20px">Subscribe</div>
+          <div style="font-size: 16px" class="text-desc">
+            Get 10% off your first order
+          </div>
+          <input type="text" placeholder="Enter your email" />
+        </div>
+        <div class="box">
+          <strong style="font-size: 18px">Support</strong>
+          <div style="font-size: 16px" class="text-desc">
+            111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.
+          </div>
+          <div style="font-size: 16px" class="text-desc">
+            exclusive@gmail.com
+          </div>
+          <div style="font-size: 16px" class="text-desc">+88015-88888-9999</div>
+        </div>
+        <div class="box">
+          <strong style="font-size: 18px">Account</strong>
+          <div style="font-size: 16px" class="text-desc">My Account</div>
+          <div style="font-size: 16px" class="text-desc">Login / Register</div>
+          <div style="font-size: 16px" class="text-desc">Cart</div>
+          <div style="font-size: 16px" class="text-desc">Wishlist</div>
+          <div style="font-size: 16px" class="text-desc">Shop</div>
+        </div>
+        <div class="box">
+          <strong style="font-size: 18px">Quick link</strong>
+          <div style="font-size: 16px" class="text-desc">Privacy Policy</div>
+          <div style="font-size: 16px" class="text-desc">Terms Of Use</div>
+          <div style="font-size: 16px" class="text-desc">FAQ</div>
+          <div style="font-size: 16px" class="text-desc">Contact</div>
+        </div>
+        <div class="box">
+          <strong style="font-size: 20px">Download App</strong>
+          <div style="font-size: 12px; color: lightgray">
+            Save $3 with App New User Only
+          </div>
+          <div>
+            <div class="img-app">
+              <img
+                src="../Asset/Qr Code.png"
+                alt="Download App"
+                style="width: 80px; height: 80px"
+              />
+              <div class="img-storeapp">
+                <img
+                  src="../Asset/png-transparent-google-play-store-logo-google-play-app-store-android-wallets-text-label-logo.png"
+                  alt="Google Play Store"
+                />
+                <img src="../Asset/download-appstore.png" alt="App Store" />
+              </div>
+            </div>
+          </div>
+          <div class="img-social">
+            <img src="../Asset/Icon-Facebook.png" alt="Facebook" />
+            <img src="../Asset/Icon-Twitter.png" alt="Twitter" />
+            <img src="../Asset/icon-instagram.png" alt="Instagram" />
+            <img src="../Asset/Icon-Linkedin.png" alt="LinkedIn" />
+          </div>
+        </div>
+      </div>
+      <div class="copyright">© Copyright Rimel 2022. All right reserved</div>
+    </footer>
 
+    <script src="../E_Commerce_Scipt/WishlistPage.js"></script>
+  </body>
 </html>
