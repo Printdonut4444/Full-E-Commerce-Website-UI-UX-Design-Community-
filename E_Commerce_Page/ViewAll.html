@@ -141,14 +141,25 @@
 
       <div class="promotion" style="  margin: 20px 10px 10px 0px; width: 100%;">
         <nav
-          style="background-color: palegreen; margin: 1px; height: 390px; width: 154px; position: fixed; z-index: 999; ">
-          aaa</nav>
+          style="background-color: palegreen; margin: 1px; display: flex; justify-content: center; align-items: center; height: 390px; width: 154px; position: fixed; z-index: 999; ">
+          <img style="object-fit: contain; width: 90%; height: 90%;" src="../Asset/Frame 707.png" alt="">
+        </nav>
       </div>
     </div>
 
-    <div
+    <div id="filter-button"
       style="position: fixed; z-index: 999; background-color: #DB4444; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; margin-left: 10px; margin-top: 10px;">
       O</div>
+    <div id="filter-menu" class="hidden-menu">
+      <h4>Category</h4>
+      <ul>
+        <li><input type="checkbox" value="electronics"> Electronics</li>
+        <li><input type="checkbox" value="gaming"> Gaming</li>
+        <li><input type="checkbox" value="accessories"> Accessories</li>
+      </ul>
+      <hr>
+      <button id="apply-filter">Apply</button>
+    </div>
   </div>
 
 

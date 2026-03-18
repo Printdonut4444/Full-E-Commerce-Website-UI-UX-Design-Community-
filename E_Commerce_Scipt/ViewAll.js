@@ -7,6 +7,16 @@ profileBtn.addEventListener("click", function (event) {
   // event.stopPropagation();
 });
 
+const filterBtn = document.getElementById("filter-button");
+const filterMenu = document.getElementById("filter-menu");
+filterBtn.addEventListener("mouseenter", () => {
+    filterMenu.style.display = "block";
+    // filterMenu.style.transition = "0.3s";
+});
+filterMenu.addEventListener("mouseleave", () => {
+    filterMenu.style.display = "none";
+});
+
 document.addEventListener("click", function (event) {
   // if (!swichlanguage.contains(event.target) && !lgMenu.contains(event.target)) {
   //   lgMenu.classList.remove("show");
@@ -16,6 +26,9 @@ document.addEventListener("click", function (event) {
     !profileBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
     dropdownMenu.classList.remove("show");
     profileBtn.classList.remove("active");
+  }
+  if (!filterMenu.contains(event.target) && event.target !== filterBtn) {
+    filterMenu.classList.remove("show");
   }
 });
 
@@ -69,32 +82,32 @@ const productRelatedItem = [
   { picture: "../Asset/img/ProductDetails/Frame 612.png", name: "AK-900 Wired Keyboard", originalPrice: 1160, discountedRate: 0.35, discountedPrice: 960, rating: 4, totalReview: 75 },
   { picture: "../Asset/img/ProductDetails/Frame 613.png", name: "IPS LCD Gaming Monitor", originalPrice: 400, discountedRate: 0.30, discountedPrice: 370, rating: 5, totalReview: 99 },
   { picture: "../Asset/img/ProductDetails/Frame 610.png", name: "RGB liquid CPU Cooler", originalPrice: 170, discountedRate: 0.09, discountedPrice: 160, rating: 4, totalReview: 65 },
-  
+
   { picture: "../Asset/img/ProductDetails/g92-2-500x500 1.png", name: "HAVIT HV-G92 Gamepad", originalPrice: 160, discountedRate: 0.40, discountedPrice: 120, rating: 5, totalReview: 88 },
   { picture: "../Asset/img/ProductDetails/Frame 610.png", name: "RGB liquid CPU Cooler", originalPrice: 170, discountedRate: 0.09, discountedPrice: 160, rating: 4, totalReview: 65 },
   { picture: "../Asset/img/ProductDetails/Frame 612.png", name: "AK-900 Wired Keyboard", originalPrice: 1160, discountedRate: 0.35, discountedPrice: 960, rating: 4, totalReview: 75 },
   { picture: "../Asset/img/ProductDetails/Frame 613.png", name: "IPS LCD Gaming Monitor", originalPrice: 400, discountedRate: 0.30, discountedPrice: 370, rating: 5, totalReview: 99 },
-  
+
   { picture: "../Asset/img/ProductDetails/Frame 612.png", name: "AK-900 Wired Keyboard", originalPrice: 1160, discountedRate: 0.35, discountedPrice: 960, rating: 4, totalReview: 75 },
   { picture: "../Asset/img/ProductDetails/Frame 613.png", name: "IPS LCD Gaming Monitor", originalPrice: 400, discountedRate: 0.30, discountedPrice: 370, rating: 5, totalReview: 99 },
   { picture: "../Asset/img/ProductDetails/Frame 610.png", name: "RGB liquid CPU Cooler", originalPrice: 170, discountedRate: 0.09, discountedPrice: 160, rating: 4, totalReview: 65 },
   { picture: "../Asset/img/ProductDetails/g92-2-500x500 1.png", name: "HAVIT HV-G92 Gamepad", originalPrice: 160, discountedRate: 0.40, discountedPrice: 120, rating: 5, totalReview: 88 },
-  
+
   { picture: "../Asset/img/ProductDetails/Frame 613.png", name: "IPS LCD Gaming Monitor", originalPrice: 400, discountedRate: 0.30, discountedPrice: 370, rating: 5, totalReview: 99 },
   { picture: "../Asset/img/ProductDetails/Frame 610.png", name: "RGB liquid CPU Cooler", originalPrice: 170, discountedRate: 0.09, discountedPrice: 160, rating: 4, totalReview: 65 },
   { picture: "../Asset/img/ProductDetails/Frame 612.png", name: "AK-900 Wired Keyboard", originalPrice: 1160, discountedRate: 0.35, discountedPrice: 960, rating: 4, totalReview: 75 },
   { picture: "../Asset/img/ProductDetails/g92-2-500x500 1.png", name: "HAVIT HV-G92 Gamepad", originalPrice: 160, discountedRate: 0.40, discountedPrice: 120, rating: 5, totalReview: 88 },
-  
+
   { picture: "../Asset/img/ProductDetails/g92-2-500x500 1.png", name: "HAVIT HV-G92 Gamepad", originalPrice: 160, discountedRate: 0.40, discountedPrice: 120, rating: 5, totalReview: 88 },
   { picture: "../Asset/img/ProductDetails/Frame 612.png", name: "AK-900 Wired Keyboard", originalPrice: 1160, discountedRate: 0.35, discountedPrice: 960, rating: 4, totalReview: 75 },
   { picture: "../Asset/img/ProductDetails/Frame 613.png", name: "IPS LCD Gaming Monitor", originalPrice: 400, discountedRate: 0.30, discountedPrice: 370, rating: 5, totalReview: 99 },
   { picture: "../Asset/img/ProductDetails/Frame 610.png", name: "RGB liquid CPU Cooler", originalPrice: 170, discountedRate: 0.09, discountedPrice: 160, rating: 4, totalReview: 65 },
-  
+
   { picture: "../Asset/img/ProductDetails/Frame 613.png", name: "IPS LCD Gaming Monitor", originalPrice: 400, discountedRate: 0.30, discountedPrice: 370, rating: 5, totalReview: 99 },
   { picture: "../Asset/img/ProductDetails/g92-2-500x500 1.png", name: "HAVIT HV-G92 Gamepad", originalPrice: 160, discountedRate: 0.40, discountedPrice: 120, rating: 5, totalReview: 88 },
   { picture: "../Asset/img/ProductDetails/Frame 612.png", name: "AK-900 Wired Keyboard", originalPrice: 1160, discountedRate: 0.35, discountedPrice: 960, rating: 4, totalReview: 75 },
   { picture: "../Asset/img/ProductDetails/Frame 610.png", name: "RGB liquid CPU Cooler", originalPrice: 170, discountedRate: 0.09, discountedPrice: 160, rating: 4, totalReview: 65 },
-  
+
   { picture: "../Asset/img/ProductDetails/g92-2-500x500 1.png", name: "HAVIT HV-G92 Gamepad", originalPrice: 160, discountedRate: 0.40, discountedPrice: 120, rating: 5, totalReview: 88 },
   { picture: "../Asset/img/ProductDetails/Frame 613.png", name: "IPS LCD Gaming Monitor", originalPrice: 400, discountedRate: 0.30, discountedPrice: 370, rating: 5, totalReview: 99 },
   { picture: "../Asset/img/ProductDetails/Frame 612.png", name: "AK-900 Wired Keyboard", originalPrice: 1160, discountedRate: 0.35, discountedPrice: 960, rating: 4, totalReview: 75 },
@@ -105,8 +118,8 @@ const productRelatedItem = [
 // const relatedItem = document.getElementById("related-item");
 const relatedItemNode = document.getElementById("related-item");
 relatedItemNode.style.display = "grid";
-relatedItemNode.style.gridTemplateColumns = "repeat(4, 1fr)"; // สร้าง 4 คอลัมน์ ขนาดเท่ากัน
-relatedItemNode.style.gap = "30px"; // ระยะห่างระหว่าง Item (ปรับตามความสวยงาม)
+relatedItemNode.style.gridTemplateColumns = "repeat(4, 1fr)";
+relatedItemNode.style.gap = "30px";
 relatedItemNode.style.justifyItems = "center";
 
 productRelatedItem.forEach((item) => {
